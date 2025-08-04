@@ -1,0 +1,119 @@
+layout: {qmk_keyboard: bastardkb/tbkmini/v1/elitec, layout_name: LAYOUT_split_3x6_3}
+layers:
+  L0:
+  - [TAB, Q, W, E, R, T, Y, U, I, O]
+  - - P
+    - BSPC
+    - {t: LCTL, h: sticky}
+    - A
+    - S
+    - D
+    - F
+    - G
+    - H
+    - J
+  - - K
+    - L
+    - ;
+    - ''''
+    - {t: LSFT, h: sticky}
+    - Z
+    - X
+    - C
+    - V
+    - B
+  - - N
+    - M
+    - ','
+    - .
+    - /
+    - ESC
+    - {t: LSFT, h: sticky}
+    - SPC
+    - MO( NUM)
+    - MO( SYM)
+  - [TAB, BSPC]
+  L1:
+  - [TAB, '%', PAST, PMNS, +, HOME, END, '7', '8', '9']
+  - - ''
+    - BSPC
+    - {t: LCTL, h: sticky}
+    - OS GUI
+    - OS ALT
+    - OS SHFT
+    - OS CTRL
+    - /
+    - '0'
+    - '4'
+  - - '5'
+    - '6'
+    - DEL
+    - ''
+    - {t: LSFT, h: sticky}
+    - '='
+    - '!'
+    - '@'
+    - '#'
+    - \
+  - - '='
+    - '1'
+    - '2'
+    - '3'
+    - INS
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L2:
+  - [TAB, '~', '-', '"', (, ^, $, ), '&', '*']
+  - - ''
+    - BSPC
+    - {t: LCTL, h: sticky}
+    - '`'
+    - _
+    - ''''
+    - ':'
+    - ''
+    - LEFT
+    - DOWN
+  - - UP
+    - RIGHT
+    - _
+    - ''
+    - {t: LSFT, h: sticky}
+    - '|'
+    - ''
+    - '{'
+    - '['
+    - <
+  - - '>'
+    - ']'
+    - '}'
+    - ''
+    - '-'
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L3:
+  - [QK BOOT, RGB HUI, RGB SAI, Ctl+C, Ctl+V, RGB VAI, PSCR, F7, F8, F9]
+  - [F10, '', RGB TOG, OS GUI, OS ALT, OS SHFT, OS CTRL, '', PGUP, F4]
+  - [F5, F6, F11, '', RGB MOD, RGB HUD, RGB SAD, Sft+Ctl+C, Sft+Ctl+V, RGB VAD]
+  - - PGDN
+    - F1
+    - F2
+    - F3
+    - F12
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
