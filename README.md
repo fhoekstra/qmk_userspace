@@ -2,15 +2,18 @@
 
 This repository contains keymaps for my open-source wired [keyboards](./keyboards).
 
-TODO: picture of my TBKmini keyboard
+![A picture of my TBKMini keyboard, a split ergonomically formed Manuform keyboard with keys arranged in a well pattern. The halves are connected by a TRRS cable and the right half is plugged into the pc with a USB-C cable. Each hand has 3 rows of 5 keys (that is, 2 columns for the index, 2 for the pinky, and 1 for each other finger) and  a tilted thumb cluster with 3 keys. Each key has an individual RGB, all are set to pink in the image.](https://github.com/user-attachments/assets/ac539984-04fb-44c9-b3fd-3959a3ffb93f)
+
 
 ![A visual representation of my keymap for the BastardKB TBKmini split keyboard, with 4 layers, Callum-style one-shot mods, capsword on double-tap of a dedicated shift thumbkey and a few combos](./keyboards/bastardkb/tbkmini/keymaps/fhoekstra/km.svg)
 
 ## Why such a small and weird keyboard?
 
-### Just do touch-typing
+Because I want to type comfortably.
 
-Touch-typing maps on a regular keyboard are nice for the letters a-z, but not so much for symbols and modifiers (Shift, Ctrl, Alt, Cmd/Win/Super). Those cover large areas of a normal keyboard, and all of that work is supposed to be done by the pinky fingers.
+### Just do touch-typing then?
+
+Touch-typing maps on a regular keyboard are nice for the letters a-z, but not so much for symbols, modifiers (`Shift`, `Ctrl`, `Alt`, `Cmd/Win/Super`) and special keys like `ESC` and `Backspace`. Those cover large areas of a normal keyboard, and all of that work is supposed to be done by the pinky fingers.
 
 As a programmer, I like using great tools to help me code. An IDE with good autocomplete means I don't normally type out full words when coding. What I do type a lot, is symbols: `(\`{}:['a-b', "a_b/c"])`
 
