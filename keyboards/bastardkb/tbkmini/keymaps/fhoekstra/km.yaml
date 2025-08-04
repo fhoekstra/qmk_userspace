@@ -35,14 +35,14 @@ layers:
   - [TAB, BSPC]
   L1:
   - [TAB, '%', PAST, PMNS, +, HOME, END, '7', '8', '9']
-  - - ''
+  - - INS
     - BSPC
     - {t: LCTL, h: sticky}
     - OS GUI
     - OS ALT
     - OS SHFT
     - OS CTRL
-    - /
+    - ''
     - '0'
     - '4'
   - - '5'
@@ -54,12 +54,12 @@ layers:
     - '!'
     - '@'
     - '#'
-    - \
-  - - '='
+    - ''
+  - - ''
     - '1'
     - '2'
     - '3'
-    - INS
+    - \
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -76,24 +76,24 @@ layers:
     - _
     - ''''
     - ':'
-    - ''
-    - LEFT
-    - DOWN
-  - - UP
-    - RIGHT
-    - _
+    - '['
+    - ']'
+    - OS CTRL
+  - - OS SHFT
+    - OS ALT
+    - OS GUI
     - ''
     - {t: LSFT, h: sticky}
     - '|'
+    - '='
     - ''
     - '{'
-    - '['
     - <
   - - '>'
-    - ']'
     - '}'
     - ''
-    - '-'
+    - ''
+    - ''
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -102,15 +102,15 @@ layers:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   L3:
-  - [QK BOOT, RGB HUI, RGB SAI, Ctl+C, Ctl+V, RGB VAI, PSCR, F7, F8, F9]
-  - [F10, '', RGB TOG, OS GUI, OS ALT, OS SHFT, OS CTRL, '', PGUP, F4]
-  - [F5, F6, F11, '', RGB MOD, RGB HUD, RGB SAD, Sft+Ctl+C, Sft+Ctl+V, RGB VAD]
-  - - PGDN
-    - F1
-    - F2
-    - F3
+  - [QK BOOT, F1, F2, F3, F4, F5, F6, F7, F8, F9]
+  - [F10, '', RGB TOG, OS GUI, OS ALT, OS SHFT, OS CTRL, KB VOLUME UP, LEFT, DOWN]
+  - [UP, RIGHT, F11, RGB VAI, RGB MOD, '', '', Sft+Ctl+C, Sft+Ctl+V, KB VOLUME DOWN]
+  - - BRIGHTNESS DOWN
+    - PGDN
+    - PGUP
+    - BRIGHTNESS UP
     - F12
-    - ''
+    - RGB VAD
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

@@ -36,6 +36,11 @@
 #define MYPASTE C(KC_V)
 #define MYSCOPY S(C(KC_C))
 #define MYSPASTE S(C(KC_V))
+// Misc keycodes
+#define VOLUP KC_KB_VOLUME_UP
+#define VOLDN KC_KB_VOLUME_DOWN
+#define BRTUP KC_BRIGHTNESS_UP
+#define BRTDN KC_BRIGHTNESS_DOWN
 
 enum custom_layers {
     _BASE,
@@ -54,10 +59,12 @@ enum keycodes {
 };
 
 const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM combo_jkl[] = {KC_J, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM combo_sd[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 combo_t key_combos[] = {
-    COMBO(combo_jk, KC_ESC),
-    COMBO(combo_jkl, KC_ENT),
+    COMBO(combo_jk, KC_ENT),
+    COMBO(combo_sd, KC_ESC),
+    COMBO(combo_df, KC_TAB),
 };
 uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
 
@@ -77,11 +84,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_PERC, KC_PAST, KC_PMNS, KC_PLUS, KC_HOME,                       KC_END,  KC_7  ,  KC_8  ,  KC_9  , XXXXXXX, KC_BSPC,
+           KC_TAB  , KC_PERC, KC_PAST, KC_PMNS, KC_PLUS, KC_HOME,                       KC_END,  KC_7  ,  KC_8  ,  KC_9  , KC_INS , KC_BSPC,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, KC_SLSH,                        KC_0 ,  KC_4  ,  KC_5  ,  KC_6  , KC_DEL , XXXXXXX,
+           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, XXXXXXX,                        KC_0 ,  KC_4  ,  KC_5  ,  KC_6  , KC_DEL , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_EQL , KC_EXLM,  KC_AT , KC_HASH, KC_BSLS,                       KC_EQL,  KC_1  ,  KC_2  ,  KC_3  , KC_INS , XXXXXXX,
+           OS_LSFT , KC_EQL , KC_EXLM,  KC_AT , KC_HASH, XXXXXXX,                      XXXXXXX,  KC_1  ,  KC_2  ,  KC_3  , KC_BSLS, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 KC_TRNS, KC_TRNS, _______,   _______ , KC_TRNS, KC_TRNS
                                             //`--------------------------'  `--------------------------'
@@ -89,11 +96,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_TILD, KC_MINS, KC_DQUO, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_AMPR, KC_ASTR, XXXXXXX , KC_BSPC,
+           KC_TAB  , KC_TILD, KC_MINS, KC_DQUO, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_AMPR, KC_ASTR, XXXXXXX, KC_BSPC,
         //|--------+----*---+---*----+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , KC_GRV , KC_UNDS, KC_QUOT,KC_COLON, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP  ,KC_RIGHT, KC_UNDS, XXXXXXX,
+           OS_LCTL , KC_GRV , KC_UNDS, KC_QUOT,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI, XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_PIPE, XXXXXXX, KC_LCBR, KC_LBRC, KC_LABK,                      KC_RABK, KC_RBRC, KC_RCBR, XXXXXXX, KC_MINS, XXXXXXX,
+           OS_LSFT , KC_PIPE, KC_EQL , XXXXXXX, KC_LCBR, KC_LABK,                      KC_RABK, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 KC_TRNS, KC_TRNS, _______,   _______ , KC_TRNS, KC_TRNS
                                             //`--------------------------'  `--------------------------'
@@ -101,15 +108,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EXTRA] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           QK_BOOT , RGB_HUI, RGB_SAI, MYCOPY , MYPASTE, RGB_VAI,                      KC_PSCR,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 , XXXXXXX,
+           QK_BOOT ,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 ,  KC_F5 ,                       KC_F6 ,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           RGB_TOG , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, XXXXXXX,                      KC_PGUP,  KC_F4 ,  KC_F5 ,  KC_F6 , KC_F11 , XXXXXXX,
+           RGB_TOG , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL,  VOLUP ,                      KC_LEFT, KC_DOWN,  KC_UP ,KC_RIGHT, KC_F11 , RGB_VAI,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           RGB_MOD , RGB_HUD, RGB_SAD, MYSCOPY,MYSPASTE, RGB_VAD,                     KC_PGDN,  KC_F1 ,  KC_F2 ,  KC_F3 , KC_F12,  XXXXXXX,
+           RGB_MOD , XXXXXXX, XXXXXXX, MYSCOPY,MYSPASTE,  VOLDN ,                       BRTDN , KC_PGDN, KC_PGUP,  BRTUP , KC_F12 , RGB_VAD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 KC_TRNS, KC_TRNS, _______ ,    _______ , KC_TRNS, KC_TRNS
                                             //`--------------------------'  `--------------------------'
         )};
+
+// Caps word: when do we continue when do we stop?
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+        case KC_MINS:
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
+    }
+}
 
 // Callum One-Shot Mods:
 
