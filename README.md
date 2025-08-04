@@ -17,7 +17,7 @@ Touch-typing maps on a regular keyboard are nice for the letters a-z, but not so
 
 As a programmer, I like using great tools to help me code. An IDE with good autocomplete means I don't normally type out full words when coding. What I do type a lot, is symbols: `(\`{}:['a-b', "a_b/c"])`
 
-I am very grateful for neovim (and the lazyvim distribution of it), lazygit, k9s, wezterm and kitty. They enable me to use a pc almost completely with keyboard shortcuts, using the letter keys that are already in a comfortable position, sometimes combined with modifiers.
+I am very grateful for [neovim](https://neovim.io/) (and the [lazyvim](https://www.lazyvim.org/) distribution of it), [lazygit](https://github.com/jesseduffield/lazygit), [k9s](https://k9scli.io/), [wezterm](https://wezterm.org/) and [kitty](https://sw.kovidgoyal.net/kitty/). They enable me to use a pc almost completely with keyboard shortcuts.
 
 So my goal with this was to make it more comfortable to type symbols and modifiers, using all my fingers.
 
@@ -37,9 +37,9 @@ This takes some getting used to, but if you use a layer key on each thumb, you g
 
 ## More detailed considerations
 
-I did not want to use home-row mods, or other timing-sensitive tricks. I want to be able to type as slow as I want to, or as fast as I can. This is why I went with one-shot modifiers on layers, like the Callum and Seniply layouts have popularized.
+I did not want to use home-row mods, or other timing-sensitive tricks, such as Mod-Tap. I want to be able to type as slow as I want to, or as fast as I can. This is why I went with one-shot modifiers on layers, like the [Callum](https://keymapdb.com/keymaps/callum_oakley/) and [Seniply](https://keymapdb.com/keymaps/stevep99/) layouts have popularized.
 
-I have briefly considered placing the letters more optimally, in Colemak-DH layout, but have opted not to do that for now. I have no problem with QWERTY, and learning a new alpha layout is much more difficult than just the symbols and modifiers. Perhaps later.
+I have briefly considered placing the letters more optimally, in [Colemak-DH](https://dreymar.colemak.org/) layout, but have opted not to do that for now. [Although QWERTY is a little awkward when typing English words](https://duckduckgo.com/?q=colemak+qwerty+heatmap&iar=images&t=brave), changing to Colemak would also move the Vim keys, or make me unable to use a default vim config. Besides, learning a new alpha layout is much more difficult than just the symbols and modifiers, even if only?for typing words. Perhaps later.
 
 ------
 # QMK Userspace template
