@@ -1,6 +1,47 @@
-# QMK Userspace
+# My QMK keyboard keymaps
 
-This is the QMK Userspace for the Bastard Keyboards keymaps.
+This repository contains keymaps for my open-source wired [keyboards](./keyboards).
+
+TODO: picture of my TBKmini keyboard
+
+![A visual representation of my keymap for the BastardKB TBKmini split keyboard, with 4 layers, Callum-style one-shot mods, capsword on double-tap of a dedicated shift thumbkey and a few combos](./keyboards/bastardkb/tbkmini/keymaps/fhoekstra/km.svg)
+
+## Why such a small and weird keyboard?
+
+### Just do touch-typing
+
+Touch-typing maps on a regular keyboard are nice for the letters a-z, but not so much for symbols and modifiers (Shift, Ctrl, Alt, Cmd/Win/Super). Those cover large areas of a normal keyboard, and all of that work is supposed to be done by the pinky fingers.
+
+As a programmer, I like using great tools to help me code. An IDE with good autocomplete means I don't normally type out full words when coding. What I do type a lot, is symbols: `(\`{}:['a-b', "a_b/c"])`
+
+I am very grateful for neovim (and the lazyvim distribution of it), lazygit, k9s, wezterm and kitty. They enable me to use a pc almost completely with keyboard shortcuts, using the letter keys that are already in a comfortable position, sometimes combined with modifiers.
+
+So my goal with this was to make it more comfortable to type symbols and modifiers, using all my fingers.
+
+###  Layers and thumb keys
+
+Wouldn't it be nice if we could put all the symbols, modifiers and numbers right in that comfortable area where the letters are?
+
+But you'd need to press some other key at the same time to separate them from the letters. Where do we put this key?
+
+If you've ever looked at a game controller, handheld console, or smartphone, you've seen that almost all the keys are manipulated with the thumbs.
+
+The thumbs can do much more than just hit the space bar. If you put keys close to them.
+
+Those thumb keys can then be used to enable "layers" with numbers, symbols, etc.
+
+This takes some getting used to, but if you use a layer key on each thumb, you get 4 layers. This is more than enough space to put all the keys you want. And that is how you can type everything you want while barely moving your fingers!
+
+## More detailed considerations
+
+I did not want to use home-row mods, or other timing-sensitive tricks. I want to be able to type as slow as I want to, or as fast as I can. This is why I went with one-shot modifiers on layers, like the Callum and Seniply layouts have popularized.
+
+I have briefly considered placing the letters more optimally, in Colemak-DH layout, but have opted not to do that for now. I have no problem with QWERTY, and learning a new alpha layout is much more difficult than just the symbols and modifiers. Perhaps later.
+
+------
+# QMK Userspace template
+
+This is forked from a template repository which allows for an external set of QMK keymaps to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the main QMK repository.
 
 ## Howto configure your build targets
 
