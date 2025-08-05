@@ -31,8 +31,8 @@ layers:
     - {t: LSFT, h: sticky}
     - SPC
     - MO( NUM)
-    - MO( SYM)
-  - [TAB, BSPC]
+    - TAB
+  - [MO( SYM), BSPC]
   NUM:
   - [TAB, /, '* (NP)', '- (NP)', K, '', '', '7', '8', '9']
   - - INS
