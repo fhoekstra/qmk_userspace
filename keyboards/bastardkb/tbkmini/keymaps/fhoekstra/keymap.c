@@ -64,7 +64,7 @@ const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM combo_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM combo_below_jk_num[] = {KC_1, KC_2, COMBO_END};
+const uint16_t PROGMEM combo_below_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_ext[] = {KC_PGDN, KC_PGUP, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_pinkies, CW_TOGG),
