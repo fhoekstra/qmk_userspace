@@ -34,7 +34,7 @@ layers:
     - TAB
   - [MO( SYM), BSPC]
   NUM:
-  - [TAB, /, '* (NP)', '- (NP)', K, '', '', '7', '8', '9']
+  - [TAB, '', '', '', K, '', '', '7', '8', '9']
   - - INS
     - BSPC
     - {t: LCTL, h: sticky}
@@ -51,12 +51,12 @@ layers:
     - ''
     - {t: LSFT, h: sticky}
     - ''
-    - '='
-    - +
+    - ''
+    - .
     - J
     - HOME
   - - END
-    - '1'
+    - '2'
     - '2'
     - '3'
     - \
