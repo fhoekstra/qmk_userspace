@@ -1,0 +1,3 @@
+combos:
+    - { tk: [J, K], k: Ent, l: [BASE] }
+    - { tk: [S, D], k: Esc, l: [BASE] }
