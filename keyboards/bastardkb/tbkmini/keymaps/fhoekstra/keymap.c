@@ -93,11 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , XXXXXXX, XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      XXXXXXX,  KC_7  ,  KC_8  ,  KC_9  , KC_INS , KC_BSPC,
+           KC_TAB  , XXXXXXX, XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , KC_DEL , KC_BSPC,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                        KC_0 ,  KC_4  ,  KC_5  ,  KC_6  , KC_DEL , XXXXXXX,
+           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                      XXXXXXX,  KC_0 ,   KC_1  ,  KC_2  ,  KC_3  , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , XXXXXXX, XXXXXXX, KC_DOT ,  KC_J  , KC_HOME,                       KC_END,  KC_2  ,  KC_2  ,  KC_3  , KC_BSLS, XXXXXXX,
+           OS_LSFT , XXXXXXX, KC_DOT , KC_COMM,  KC_J  , KC_HOME,                      KC_END ,  KC_4  ,  KC_5  ,  KC_6  , KC_SLSH, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
