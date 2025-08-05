@@ -95,6 +95,7 @@ parse_config:
         DOT: .
         SLASH: /
         SLSH: /
+        PSLS: /
         TILDE: "~"
         TILD: "~"
         EXCLAIM: "!"
@@ -119,6 +120,7 @@ parse_config:
         UNDERSCORE: _
         UNDS: _
         PLUS: +
+        PPLS: +
         LEFT_CURLY_BRACE: "{"
         LCBR: "{"
         RIGHT_CURLY_BRACE: "}"
