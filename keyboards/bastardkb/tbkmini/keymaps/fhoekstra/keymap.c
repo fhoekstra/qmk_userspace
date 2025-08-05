@@ -60,12 +60,14 @@ enum keycodes {
 };
 
 const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM combo_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_num[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_ext[] = {KC_PGDN, KC_PGUP, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_jk, KC_ENT),
+    COMBO(combo_jk_num, KC_ENT),
     COMBO(combo_df, KC_ESC),
     COMBO(combo_below_jk, KC_TAB),
     COMBO(combo_below_jk_ext, KC_TAB),
@@ -101,11 +103,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_TILD, KC_DQUO, KC_MINS, KC_LCBR, KC_PERC,                      XXXXXXX, KC_RCBR, KC_AMPR, KC_ASTR, KC_HASH, KC_BSPC,
+           KC_TAB  , KC_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_HASH, XXXXXXX, KC_BSPC,
         //|--------+----*-------*---+---*----+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , KC_GRV , KC_QUOT, KC_UNDS,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI, XXXXXXX,
+           OS_LCTL , KC_GRV , KC_DQUO, KC_UNDS,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI, XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_PIPE, KC_EQL , KC_PLUS, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_EXLM,  KC_AT , KC_BSLS, XXXXXXX,
+           OS_LSFT , KC_PIPE, KC_QUOT, KC_MINS, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_EXLM,  KC_AT , KC_BSLS, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
