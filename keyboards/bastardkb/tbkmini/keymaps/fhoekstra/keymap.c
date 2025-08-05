@@ -61,9 +61,15 @@ enum keycodes {
 
 const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
+const uint16_t PROGMEM combo_below_jk_num[] = {KC_1, KC_2, COMBO_END};
+const uint16_t PROGMEM combo_below_jk_ext[] = {KC_PGDN, KC_PGUP, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_jk, KC_ENT),
     COMBO(combo_df, KC_ESC),
+    COMBO(combo_below_jk, KC_TAB),
+    COMBO(combo_below_jk_ext, KC_TAB),
+    COMBO(combo_below_jk_num, KC_TAB),
 };
 uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
 
@@ -77,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
            OS_LSFT  , KC_Z  ,  KC_X  ,  KC_C  ,  KC_V  , KC_B   ,                       KC_N  ,  KC_M  , KC_COMM, KC_DOT , KC_SLSH, KC_ESC,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                OS_LSFT, KC_SPC , LA_NUM ,    LA_SYM , KC_TAB , KC_BSPC
+                                                OS_LSFT, KC_SPC , LA_NUM ,    KC_TAB , LA_SYM , KC_BSPC
                                             //`--------------------------'  `--------------------------'
         ),
 
