@@ -34,8 +34,8 @@ layers:
     - TAB
   - [MO( SYM), BSPC]
   NUM:
-  - [TAB, '', '', '', K, '', '', '7', '8', '9']
-  - - INS
+  - [TAB, '', '', '', K, '', INS, '7', '8', '9']
+  - - DEL
     - BSPC
     - {t: LCTL, h: sticky}
     - OS GUI
@@ -43,23 +43,23 @@ layers:
     - OS SHFT
     - OS CTRL
     - Sft+G
+    - ''
     - '0'
-    - '4'
-  - - '5'
-    - '6'
-    - DEL
+  - - '1'
+    - '2'
+    - '3'
     - ''
     - {t: LSFT, h: sticky}
     - ''
-    - ''
     - .
+    - ','
     - J
     - HOME
   - - END
-    - '2'
-    - '2'
-    - '3'
-    - \
+    - '4'
+    - '5'
+    - '6'
+    - /
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
