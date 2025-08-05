@@ -73,6 +73,7 @@ parse_config:
         "NO": ""
         MINUS: "-"
         MINS: "-"
+        PMNS: "- (NP)"
         EQUAL: "="
         EQL: "="
         LEFT_BRACKET: "["
@@ -110,6 +111,7 @@ parse_config:
         AMPR: "&"
         ASTERISK: "*"
         ASTR: "*"
+        PAST: "* (NP)"
         LEFT_PAREN: (
         LPRN: (
         RIGHT_PAREN: )

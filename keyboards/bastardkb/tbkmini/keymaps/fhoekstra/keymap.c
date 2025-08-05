@@ -41,6 +41,7 @@
 #define VOLDN KC_KB_VOLUME_DOWN
 #define BRTUP KC_BRIGHTNESS_UP
 #define BRTDN KC_BRIGHTNESS_DOWN
+#define SHFT_G S(KC_G)
 
 enum custom_layers {
     _BASE,
@@ -59,12 +60,10 @@ enum keycodes {
 };
 
 const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM combo_sd[] = {KC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_jk, KC_ENT),
-    COMBO(combo_sd, KC_ESC),
-    COMBO(combo_df, KC_TAB),
+    COMBO(combo_df, KC_ESC),
 };
 uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
 
@@ -84,25 +83,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_PERC, KC_PAST, KC_PMNS, KC_PLUS, KC_HOME,                       KC_END,  KC_7  ,  KC_8  ,  KC_9  , KC_INS , KC_BSPC,
+           KC_TAB  , KC_PERC, KC_PAST, KC_PMNS, XXXXXXX, KC_HOME,                       KC_END,  KC_7  ,  KC_8  ,  KC_9  , KC_INS , KC_BSPC,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, XXXXXXX,                        KC_0 ,  KC_4  ,  KC_5  ,  KC_6  , KC_DEL , XXXXXXX,
+           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                        KC_0 ,  KC_4  ,  KC_5  ,  KC_6  , KC_DEL , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_EQL , KC_EXLM,  KC_AT , KC_HASH, XXXXXXX,                      XXXXXXX,  KC_1  ,  KC_2  ,  KC_3  , KC_BSLS, XXXXXXX,
+           OS_LSFT , XXXXXXX, XXXXXXX,  KC_K  ,  KC_J  , XXXXXXX,                      XXXXXXX,  KC_1  ,  KC_2  ,  KC_3  , KC_BSLS, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                KC_TRNS, KC_TRNS, _______,   _______ , KC_TRNS, KC_TRNS
+                                                _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
         ),
 
     [_SYM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_TILD, KC_MINS, KC_DQUO, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_AMPR, KC_ASTR, XXXXXXX, KC_BSPC,
-        //|--------+----*---+---*----+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , KC_GRV , KC_UNDS, KC_QUOT,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI, XXXXXXX,
+           KC_TAB  , KC_TILD, KC_DQUO, KC_MINS, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_AMPR, KC_ASTR, XXXXXXX, KC_BSPC,
+        //|--------+----*-------*---+---*----+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           OS_LCTL , KC_GRV , KC_QUOT, KC_UNDS,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI, XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_PIPE, KC_EQL , XXXXXXX, KC_LCBR, KC_LABK,                      KC_RABK, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+           OS_LSFT , KC_PIPE, KC_EQL , KC_PLUS, KC_LCBR, KC_LABK,                      KC_RABK, KC_RCBR, KC_EXLM,  KC_AT , KC_HASH, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                KC_TRNS, KC_TRNS, _______,   _______ , KC_TRNS, KC_TRNS
+                                                _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
         ),
 
@@ -114,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
            RGB_MOD , XXXXXXX, XXXXXXX, MYSCOPY,MYSPASTE,  VOLDN ,                       BRTDN , KC_PGDN, KC_PGUP,  BRTUP , KC_F12 , RGB_VAD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                KC_TRNS, KC_TRNS, _______ ,    _______ , KC_TRNS, KC_TRNS
+                                                _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
         )};
 
