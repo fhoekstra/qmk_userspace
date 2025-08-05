@@ -1,4 +1,4 @@
 combos:
-    - { tk: [J, K], k: Ent, l: [BASE] }
+    - { p: [19, 20], k: Ent, l: [BASE, NUM, "EXTRA (NUM+SYM)"] }
     - { tk: [D, F], k: Esc, l: [BASE] }
     - { p: [31, 32], k: Tab, l: [BASE, NUM, "EXTRA (NUM+SYM)"] }
