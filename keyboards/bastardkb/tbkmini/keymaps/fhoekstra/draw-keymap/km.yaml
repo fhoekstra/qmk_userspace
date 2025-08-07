@@ -43,23 +43,23 @@ layers:
     - OS SHFT
     - OS CTRL
     - Sft+G
-    - ''
+    - ','
     - '0'
   - - '1'
     - '2'
     - '3'
     - ''
     - {t: LSFT, h: sticky}
-    - ''
-    - .
-    - ','
+    - Alt+TAB
+    - Ctl+Sft+TAB
+    - Ctl+TAB
     - J
     - HOME
   - - END
     - '4'
     - '5'
     - '6'
-    - /
+    - .
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

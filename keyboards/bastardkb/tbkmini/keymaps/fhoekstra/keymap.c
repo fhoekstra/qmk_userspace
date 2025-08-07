@@ -42,6 +42,9 @@
 #define BRTUP KC_BRIGHTNESS_UP
 #define BRTDN KC_BRIGHTNESS_DOWN
 #define SHFT_G S(KC_G)
+#define C_TAB C(KC_TAB)
+#define CS_TAB C(S(KC_TAB))
+#define A_TAB A(KC_TAB)
 
 enum custom_layers {
     _BASE,
@@ -95,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            KC_TAB  , XXXXXXX, XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , KC_DEL , KC_BSPC,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                      XXXXXXX,  KC_0 ,   KC_1  ,  KC_2  ,  KC_3  , XXXXXXX,
+           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                      KC_COMM,  KC_0  ,  KC_1  ,  KC_2  ,  KC_3  , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , XXXXXXX, KC_DOT , KC_COMM,  KC_J  , KC_HOME,                      KC_END ,  KC_4  ,  KC_5  ,  KC_6  , KC_SLSH, XXXXXXX,
+           OS_LSFT ,  A_TAB , CS_TAB ,  C_TAB ,  KC_J  , KC_HOME,                      KC_END ,  KC_4  ,  KC_5  ,  KC_6  , KC_DOT , XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
