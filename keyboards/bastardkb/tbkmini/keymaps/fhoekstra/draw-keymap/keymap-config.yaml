@@ -139,6 +139,7 @@ parse_config:
         GT: ">"
         QUESTION: "?"
         QUES: "?"
+        PSCR: "Print Screen"
     zmk_remove_keycode_prefix: []
     zmk_keycode_map:
         EXCLAMATION: "!"

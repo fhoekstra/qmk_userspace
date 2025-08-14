@@ -43,7 +43,7 @@ layers:
     - OS SHFT
     - OS CTRL
     - Sft+G
-    - ','
+    - '6'
     - '0'
   - - '1'
     - '2'
@@ -58,8 +58,8 @@ layers:
   - - END
     - '4'
     - '5'
-    - '6'
     - .
+    - /
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -103,7 +103,7 @@ layers:
     - {t: ▽, type: trans}
   EXTRA (NUM+SYM):
   - [QK BOOT, F1, F2, F3, F4, F5, F6, F7, F8, F9]
-  - [F10, '', RGB TOG, OS GUI, OS ALT, OS SHFT, OS CTRL, KB VOLUME UP, LEFT, DOWN]
+  - [F10, Print Screen, RGB TOG, OS GUI, OS ALT, OS SHFT, OS CTRL, KB VOLUME UP, LEFT, DOWN]
   - [UP, RIGHT, F11, RGB VAI, RGB MOD, '', '', Sft+Ctl+C, Sft+Ctl+V, KB VOLUME DOWN]
   - - BRIGHTNESS DOWN
     - PGDN
