@@ -45,6 +45,8 @@
 #define C_TAB C(KC_TAB)
 #define CS_TAB C(S(KC_TAB))
 #define A_TAB A(KC_TAB)
+#define AS_TAB A(S(KC_TAB))
+#define EURO RALT(KC_5)
 
 enum custom_layers {
     _BASE,
@@ -62,7 +64,7 @@ enum keycodes {
     OS_GUI,
 };
 
-const uint16_t PROGMEM combo_pinkies[] = {KC_Z, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM combo_thumbs_outer[] = {OS_LSFT, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM combo_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
@@ -70,7 +72,7 @@ const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_ext[] = {KC_PGDN, KC_PGUP, COMBO_END};
 combo_t key_combos[] = {
-    COMBO(combo_pinkies, CW_TOGG),
+    COMBO(combo_thumbs_outer, CW_TOGG),
     COMBO(combo_jk, KC_ENT),
     COMBO(combo_jk_num, KC_ENT),
     COMBO(combo_df, KC_ESC),
@@ -96,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , XXXXXXX, XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , KC_DEL , KC_BSPC,
+           KC_TAB  , AS_TAB , XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , KC_DEL , KC_BSPC,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
            OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                       KC_6  ,  KC_0  ,  KC_1  ,  KC_2  ,  KC_3  , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
@@ -108,11 +110,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_HASH, XXXXXXX, KC_BSPC,
-        //|--------+----*-------*---+---*----+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL , KC_GRV , KC_DQUO, KC_UNDS,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI, XXXXXXX,
+           KC_TAB  , KC_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_HASH,  EURO  , KC_BSPC,
+        //|--------+----*---+----*---+---*----+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           OS_LCTL , KC_GRV , KC_QUOT, KC_UNDS,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_PIPE, KC_QUOT, KC_MINS, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_EXLM,  KC_AT , KC_BSLS, XXXXXXX,
+           OS_LSFT , KC_PIPE, KC_DQUO, KC_MINS, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_EXLM,  KC_AT , KC_BSLS, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
