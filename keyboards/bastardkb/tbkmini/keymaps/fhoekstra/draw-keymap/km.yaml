@@ -34,7 +34,7 @@ layers:
     - TAB
   - [MO( SYM), BSPC]
   NUM:
-  - [TAB, '', '', '', K, '', INS, '7', '8', '9']
+  - [TAB, Alt+Sft+TAB, '', '', K, '', INS, '7', '8', '9']
   - - DEL
     - BSPC
     - {t: LCTL, h: sticky}
@@ -69,11 +69,11 @@ layers:
     - {t: ▽, type: trans}
   SYM:
   - [TAB, '~', '=', +, '{', '%', '&', '}', '*', '#']
-  - - ''
+  - - AltGr+5
     - BSPC
     - {t: LCTL, h: sticky}
     - '`'
-    - '"'
+    - ''''
     - _
     - ':'
     - '['
@@ -85,7 +85,7 @@ layers:
     - ''
     - {t: LSFT, h: sticky}
     - '|'
-    - ''''
+    - '"'
     - '-'
     - (
     - ^
