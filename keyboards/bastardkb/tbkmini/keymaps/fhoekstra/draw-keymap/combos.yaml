@@ -1,5 +1,5 @@
 combos:
-    - { p: [19, 20], k: Ent, l: [BASE, NUM, "EXTRA (NUM+SYM)"] }
-    - { tk: [D, F], k: Esc, l: [BASE] }
-    - { p: [31, 32], k: Tab, l: [BASE, NUM, "EXTRA (NUM+SYM)"] }
-    - { p: [36, 41], k: CAPS word, l: [BASE] }
+    - { p: [19, 20], k: Ent, l: [BASE, NUM, "EXTRA (NUM+SYM)"], align: "top" }
+    - { tk: [D, F], k: Esc, l: [BASE], align: "top" }
+    - { p: [31, 32], k: Tab, l: [BASE, NUM, "EXTRA (NUM+SYM)"], align: "top" }
+    - { p: [36, 41], k: CAPS word, l: [BASE], align: "bottom" }

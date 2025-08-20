@@ -53,16 +53,16 @@ parse_config:
         L3: EXTRA (NUM+SYM)
     mark_alternate_layer_activators: false
     modifier_fn_map:
-        left_ctrl: Ctl
-        right_ctrl: Ctl
-        left_shift: Sft
-        right_shift: Sft
-        left_alt: Alt
+        left_ctrl: ^
+        right_ctrl: ^
+        left_shift: ⇧
+        right_shift: ⇧
+        left_alt: ⎇
         right_alt: AltGr
-        left_gui: Gui
-        right_gui: Gui
-        keycode_combiner: "{mods}+{key}"
-        mod_combiner: "{mod_1}+{mod_2}"
+        left_gui: ⌘
+        right_gui: ⌘
+        keycode_combiner: "{mods} {key}"
+        mod_combiner: "{mod_1}{mod_2}"
         special_combinations:
             left_ctrl+left_alt+left_gui+left_shift: Hyper
             left_ctrl+left_alt+left_shift: Meh
@@ -71,6 +71,12 @@ parse_config:
     qmk_keycode_map:
         XXXXXXX: ""
         "NO": ""
+        OS_CTRL: ^mod
+        LCTL: ^
+        OS_SHFT: ⇧mod
+        LSFT: ⇧
+        OS_ALT: ⎇mod
+        OS_GUI: ⌘mod
         MINUS: "-"
         MINS: "-"
         PMNS: "- (NP)"
@@ -139,7 +145,12 @@ parse_config:
         GT: ">"
         QUESTION: "?"
         QUES: "?"
-        PSCR: "Print Screen"
+        PSCR: "Print Scr"
+        BRIGHTNESS_DOWN: "Brt +"
+        BRIGHTNESS_UP: "Brt -"
+        KB_VOLUME_DOWN: "Vol -"
+        KB_VOLUME_UP: "Vol +"
+
     zmk_remove_keycode_prefix: []
     zmk_keycode_map:
         EXCLAMATION: "!"
