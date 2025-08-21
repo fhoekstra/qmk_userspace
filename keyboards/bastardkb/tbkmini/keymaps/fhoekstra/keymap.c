@@ -262,5 +262,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+    if ( IS_LAYER_ON(_BASE_UNDUTCH) ) {
+        // This part right here does not work
+        return update_tri_layer_state(state, _NUM, _SYM_UNDUTCH, _EXTRA);
+    }
     return update_tri_layer_state(state, _NUM, _SYM, _EXTRA);
 }
