@@ -23,6 +23,7 @@
 #define LA_SYM MO(_SYM)
 #define LA_NUM MO(_NUM)
 #define LA_UDSYM MO(_SYM_UNDUTCH)
+#define LA_UDNUM MO(_NUM_UNDUTCH)
 // Modifiers
 #define OS_LGUI OSM(MOD_LGUI)
 #define OS_RGUI OSM(MOD_RGUI)
@@ -56,6 +57,8 @@ enum custom_layers {
     _EXTRA,
     _BASE_UNDUTCH,
     _SYM_UNDUTCH,
+    _NUM_UNDUTCH,
+    _EXTRA_UNDUTCH,
 };
 
 enum keycodes {
@@ -109,18 +112,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             //`--------------------------'  `--------------------------'
         ),
 
-    [_BASE_UNDUTCH] = LAYOUT_split_3x6_3(
-        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  ,  KC_Q  ,  KC_W  , KC_E   ,  KC_R  , KC_T   ,                       KC_Y  ,  KC_U  ,  KC_I  ,  KC_O  ,  KC_P  , KC_BSPC,
-        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LCTL ,  KC_A  ,  KC_S  , KC_D   ,  KC_F  , KC_G   ,                       KC_H  ,  KC_J  ,  KC_K  ,  KC_L  , KC_SCLN, KC_QUOT,
-        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT  , KC_Z  ,  KC_X  ,  KC_C  ,  KC_V  , KC_B   ,                       KC_N  ,  KC_M  , KC_COMM, KC_DOT , KC_SLSH, KC_ESC ,
-        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                OS_LSFT, KC_SPC , LA_NUM ,    KC_TAB ,LA_UDSYM, KC_BSPC
-                                            //`--------------------------'  `--------------------------'
-        ),
-
     [_NUM] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            KC_TAB  , AS_TAB , XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , KC_DEL , KC_BSPC,
@@ -145,6 +136,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             //`--------------------------'  `--------------------------'
         ),
 
+    [_EXTRA] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+           QK_BOOT ,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 ,  KC_F5 ,                       KC_F6 ,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 , KC_PSCR,
+        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           RGB_TOG , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL,  VOLUP ,                      KC_LEFT, KC_DOWN,  KC_UP ,KC_RIGHT, KC_F11 , RGB_VAI,
+        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           RGB_MOD , XXXXXXX, XXXXXXX, MYSCOPY,MYSPASTE,  VOLDN ,                       BRTDN , KC_PGDN, KC_PGUP,  BRTUP , KC_F12 , RGB_VAD,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                                _______, _______, _______,   _______ , _______, _______
+                                            //`--------------------------'  `--------------------------'
+        ),
+
+
+    [_BASE_UNDUTCH] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+           KC_TAB  ,  KC_Q  ,  KC_W  , KC_E   ,  KC_R  , KC_T   ,                       KC_Y  ,  KC_U  ,  KC_I  ,  KC_O  ,  KC_P  , KC_BSPC,
+        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           OS_LCTL ,  KC_A  ,  KC_S  , KC_D   ,  KC_F  , KC_G   ,                       KC_H  ,  KC_J  ,  KC_K  ,  KC_L  , KC_SCLN, KC_QUOT,
+        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           OS_LSFT  , KC_Z  ,  KC_X  ,  KC_C  ,  KC_V  , KC_B   ,                       KC_N  ,  KC_M  , KC_COMM, KC_DOT , KC_SLSH, KC_ESC ,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                                OS_LSFT, KC_SPC ,LA_UDNUM,    KC_TAB ,LA_UDSYM, KC_BSPC
+                                            //`--------------------------'  `--------------------------'
+        ),
+
+    [_NUM_UNDUTCH] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+           KC_TAB  , AS_TAB , XXXXXXX, XXXXXXX,  KC_K  , XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , KC_DEL , KC_BSPC,
+        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           OS_LCTL , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, SHFT_G ,                       KC_6  ,  KC_0  ,  KC_1  ,  KC_2  ,  KC_3  , XXXXXXX,
+        //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
+           OS_LSFT ,  A_TAB , CS_TAB ,  C_TAB ,  KC_J  , KC_HOME,                      KC_END ,  KC_4  ,  KC_5  , KC_DOT , KC_SLSH, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                                _______, _______, _______,    _______, _______, _______
+                                            //`--------------------------'  `--------------------------'
+        ),
+
     [_SYM_UNDUTCH] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            KC_TAB  , KC_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_HASH,  EURO  , KC_BSPC,
@@ -157,7 +185,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             //`--------------------------'  `--------------------------'
         ),
 
-    [_EXTRA] = LAYOUT_split_3x6_3(
+    [_EXTRA_UNDUTCH] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            QK_BOOT ,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 ,  KC_F5 ,                       KC_F6 ,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 , KC_PSCR,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
@@ -165,9 +193,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
            RGB_MOD , XXXXXXX, XXXXXXX, MYSCOPY,MYSPASTE,  VOLDN ,                       BRTDN , KC_PGDN, KC_PGUP,  BRTUP , KC_F12 , RGB_VAD,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                _______, _______, _______,   _______ , _______, _______
+                                                _______, _______,LA_UDNUM,   _______ ,LA_UDSYM, _______
                                             //`--------------------------'  `--------------------------'
-        )};
+        )
+};
 
 // Caps word: when do we continue when do we stop?
 bool caps_word_press_user(uint16_t keycode) {
@@ -197,6 +226,7 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     case LA_SYM:
     case LA_NUM:
     case LA_UDSYM:
+    case LA_UDNUM:
         return true;
     default:
         return false;
@@ -208,6 +238,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case LA_SYM:
     case LA_NUM:
     case LA_UDSYM:
+    case LA_UDNUM:
     case KC_LSFT:
     case OS_SHFT:
     case OS_CTRL:
@@ -262,9 +293,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    if ( IS_LAYER_ON(_BASE_UNDUTCH) ) {
-        // This part right here does not work
-        return update_tri_layer_state(state, _NUM, _SYM_UNDUTCH, _EXTRA);
+    switch (get_highest_layer(state)) {
+        case _BASE_UNDUTCH:
+        case _SYM_UNDUTCH:
+        case _NUM_UNDUTCH:
+        case _EXTRA_UNDUTCH:
+            return update_tri_layer_state(state, _NUM_UNDUTCH, _SYM_UNDUTCH, _EXTRA_UNDUTCH);
+            break;
+        default: //  for any other layers, or the default layer
+            return update_tri_layer_state(state, _NUM, _SYM, _EXTRA);
+            break;
     }
     return update_tri_layer_state(state, _NUM, _SYM, _EXTRA);
 }
