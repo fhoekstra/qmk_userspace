@@ -3,3 +3,5 @@ combos:
     - { tk: [D, F], k: Esc, l: [BASE], align: "top" }
     - { p: [31, 32], k: Tab, l: [BASE, NUM, "EXTRA (NUM+SYM)"], align: "top" }
     - { p: [36, 41], k: CAPS word, l: [BASE], align: "bottom" }
+    - { tk: [Q, Z], k: No Dead, l: [BASE], align: "left" }
+    - { tk: [P, /], k: Normal, l: [BASE], align: "right" }
