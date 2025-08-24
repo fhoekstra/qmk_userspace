@@ -1,119 +1,201 @@
-layout: {qmk_keyboard: bastardkb/tbkmini/v1/elitec, layout_name: LAYOUT_split_3x6_3}
+layout:
+  qmk_keyboard: bastardkb/tbkmini/v1/elitec
+  layout_name: LAYOUT_split_3x6_3
 layers:
   BASE:
-  - [TAB, Q, W, E, R, T, Y, U, I, O]
-  - - P
-    - BSPC
-    - {t: ^, h: sticky}
-    - A
-    - S
-    - D
-    - F
-    - G
-    - H
-    - J
-  - - K
-    - L
-    - ;
-    - ''''
-    - {t: ⇧, h: sticky}
-    - Z
-    - X
-    - C
-    - V
-    - B
-  - - N
-    - M
-    - ','
-    - .
-    - /
-    - ESC
-    - {t: ⇧, h: sticky}
-    - SPC
-    - MO( NUM)
-    - TAB
-  - [MO( SYM), BSPC]
+    - - TAB
+      - Q
+      - W
+      - E
+      - R
+      - T
+      - Y
+      - U
+      - I
+      - O
+    - - P
+      - BSPC
+      - t: ^
+        h: sticky
+      - A
+      - S
+      - D
+      - F
+      - G
+      - H
+      - J
+    - - K
+      - L
+      - ;
+      - ''''
+      - t: ⇧
+        h: sticky
+      - Z
+      - X
+      - C
+      - V
+      - B
+    - - N
+      - M
+      - ','
+      - .
+      - /
+      - ESC
+      - t: ⇧
+        h: sticky
+      - SPC
+      - MO( NUM)
+      - TAB
+    - - MO( SYM)
+      - BSPC
   NUM:
-  - [TAB, ⇧⎇ TAB, '', '', K, '', INS, '7', '8', '9']
-  - - DEL
-    - BSPC
-    - {t: ^, h: sticky}
-    - ⌘mod
-    - ⎇mod
-    - ⇧mod
-    - ^mod
-    - ⇧ G
-    - '6'
-    - '0'
-  - - '1'
-    - '2'
-    - '3'
-    - ''
-    - {t: ⇧, h: sticky}
-    - ⎇ TAB
-    - ⇧^ TAB
-    - ^ TAB
-    - J
-    - HOME
-  - - END
-    - '4'
-    - '5'
-    - .
-    - /
-    - ''
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - - TAB
+      - ⇧⎇ TAB
+      - ''
+      - ''
+      - K
+      - ''
+      - INS
+      - '7'
+      - '8'
+      - '9'
+    - - DEL
+      - BSPC
+      - t: ^
+        h: sticky
+      - ⌘mod
+      - ⎇mod
+      - ⇧mod
+      - ^mod
+      - ⇧ G
+      - '6'
+      - '0'
+    - - '1'
+      - '2'
+      - '3'
+      - ''
+      - t: ⇧
+        h: sticky
+      - ⎇ TAB
+      - ⇧^ TAB
+      - ^ TAB
+      - J
+      - HOME
+    - - END
+      - '4'
+      - '5'
+      - .
+      - /
+      - ''
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+    - - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
   SYM:
-  - [TAB, '~', '=', +, '{', '%', '&', '}', '*', '#']
-  - - €
-    - BSPC
-    - {t: ^, h: sticky}
-    - '`'
-    - ''''
-    - _
-    - ':'
-    - '['
-    - ']'
-    - ^mod
-  - - ⇧mod
-    - ⎇mod
-    - ⌘mod
-    - ''
-    - {t: ⇧, h: sticky}
-    - '|'
-    - '"'
-    - '-'
-    - (
-    - ^
-  - - $
-    - )
-    - '!'
-    - '@'
-    - \
-    - ''
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - - TAB
+      - '~'
+      - '='
+      - +
+      - '{'
+      - '%'
+      - '&'
+      - '}'
+      - '*'
+      - '#'
+    - - €
+      - BSPC
+      - t: ^
+        h: sticky
+      - '`'
+      - ''''
+      - _
+      - ':'
+      - '['
+      - ']'
+      - ^mod
+    - - ⇧mod
+      - ⎇mod
+      - ⌘mod
+      - ''
+      - t: ⇧
+        h: sticky
+      - '|'
+      - '"'
+      - '-'
+      - (
+      - ^
+    - - $
+      - )
+      - '!'
+      - '@'
+      - \
+      - ''
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+    - - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
   EXTRA (NUM+SYM):
-  - [QK BOOT, F1, F2, F3, F4, F5, F6, F7, F8, F9]
-  - [F10, Print Scr, RGB TOG, ⌘mod, ⎇mod, ⇧mod, ^mod, Vol +, LEFT, DOWN]
-  - [UP, RIGHT, F11, RGB VAI, RGB MOD, '', '', ⇧^ C, ⇧^ V, Vol -]
-  - - Brt +
-    - PGDN
-    - PGUP
-    - Brt -
-    - F12
-    - RGB VAD
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - - QK BOOT
+      - F1
+      - F2
+      - F3
+      - F4
+      - F5
+      - F6
+      - F7
+      - F8
+      - F9
+    - - F10
+      - Print Scr
+      - RGB TOG
+      - ⌘mod
+      - ⎇mod
+      - ⇧mod
+      - ^mod
+      - Vol +
+      - LEFT
+      - DOWN
+    - - UP
+      - RIGHT
+      - F11
+      - RGB VAI
+      - RGB MOD
+      - ''
+      - ''
+      - ⇧^ C
+      - ⇧^ V
+      - Vol -
+    - - Brt +
+      - PGDN
+      - PGUP
+      - Brt -
+      - F12
+      - RGB VAD
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+      - t: ▽
+        type: trans
+    - - t: ▽
+        type: trans
+      - t: ▽
+        type: trans

@@ -1,0 +1,8 @@
+- command: delete
+  path: layers.L4
+- command: delete
+  path: layers.L5
+- command: delete
+  path: layers.L6
+- command: delete
+  path: layers.L7
