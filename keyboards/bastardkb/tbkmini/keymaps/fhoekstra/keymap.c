@@ -278,16 +278,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         // UnDutch
         case SP_GRV:
             if (record->event.pressed) {
-                SEND_STRING("`");
-            } else {SEND_STRING(" ");} break;
+                tap_code(KC_GRV);
+                wait_ms(10);
+                tap_code(KC_SPC);
+            }
+            break;
         case SP_QUOT:
             if (record->event.pressed) {
-                SEND_STRING("'");
-            } else {SEND_STRING(" ");} break;
+                tap_code(KC_QUOT);
+                wait_ms(10);
+                tap_code(KC_SPC);
+            }
+            break;
         case SP_DQUO:
             if (record->event.pressed) {
-                SEND_STRING("\"");
-            } else {SEND_STRING(" ");} break;
+                send_string("\"");
+                wait_ms(10);
+                tap_code(KC_SPC);
+            }
+            break;
     }
     return true;
 }
