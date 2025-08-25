@@ -72,6 +72,8 @@ enum keycodes {
     SP_GRV,
     SP_QUOT,
     SP_DQUO,
+    SP_TILD,
+    SP_CIRC,
 };
 
 const uint16_t PROGMEM combo_thumbs_outer[] = {OS_LSFT, KC_BSPC, COMBO_END};
@@ -175,11 +177,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM_UNDUTCH] = LAYOUT_split_3x6_3(
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-           KC_TAB  , KC_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_HASH,  EURO  , KC_BSPC,
+           KC_TAB  , SP_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_HASH,  EURO  , KC_BSPC,
         //|--------+----*---+----*---+---*----+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
            OS_LCTL , SP_GRV , SP_QUOT, KC_UNDS,KC_COLON, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           OS_LSFT , KC_PIPE, SP_DQUO, KC_MINS, KC_LPRN, KC_CIRC,                      KC_DLR , KC_RPRN, KC_EXLM,  KC_AT , KC_BSLS, XXXXXXX,
+           OS_LSFT , KC_PIPE, SP_DQUO, KC_MINS, KC_LPRN, SP_CIRC,                      KC_DLR , KC_RPRN, KC_EXLM,  KC_AT , KC_BSLS, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
@@ -293,6 +295,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case SP_DQUO:
             if (record->event.pressed) {
                 send_string("\"");
+                wait_ms(10);
+                tap_code(KC_SPC);
+            }
+            break;
+        case SP_TILD:
+            if (record->event.pressed) {
+                send_string("~");
+                wait_ms(10);
+                tap_code(KC_SPC);
+            }
+            break;
+        case SP_CIRC:
+            if (record->event.pressed) {
+                send_string("^");
                 wait_ms(10);
                 tap_code(KC_SPC);
             }
