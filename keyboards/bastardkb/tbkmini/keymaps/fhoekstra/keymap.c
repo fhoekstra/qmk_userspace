@@ -62,7 +62,7 @@ enum keycodes {
     OS_CTRL,
     OS_ALT,
     OS_GUI,
-    // UnDead keys: add a space after a dead key to un-dead them
+    // UnDead 🧟 keys: add a space after a dead key to un-dead them
     KC_UNDEAD_ON,
     KC_UNDEAD_OFF,
 };

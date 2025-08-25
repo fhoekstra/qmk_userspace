@@ -4,7 +4,7 @@ This repository contains keymaps for my open-source wired [keyboards](./keyboard
 
 ![A picture of my TBKMini keyboard, a split ergonomically formed Manuform keyboard with keys arranged in a well pattern. The halves are connected by a TRRS cable and the right half is plugged into the pc with a USB-C cable. Each hand has 3 rows of 5 keys (that is, 2 columns for the index, 2 for the pinky, and 1 for each other finger) and  a tilted thumb cluster with 3 keys. Each key has an individual RGB, all are set to pink in the image.](https://github.com/user-attachments/assets/ac539984-04fb-44c9-b3fd-3959a3ffb93f)
 
-
+[Drawn with caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer):
 ![A visual representation of my keymap for the BastardKB TBKmini split keyboard, with 4 layers, Callum-style one-shot mods, capsword on double-tap of a dedicated shift thumbkey and a few combos](./keyboards/bastardkb/tbkmini/keymaps/fhoekstra/draw-keymap/km.svg)
 
 ## Why such a small and weird keyboard?
@@ -39,7 +39,9 @@ This takes some getting used to, but if you use a layer key on each thumb, you g
 
 I did not want to use home-row mods, or other timing-sensitive tricks, such as Mod-Tap. I want to be able to type as slow as I want to, or as fast as I can. This is why I went with one-shot modifiers on layers, like the [Callum](https://keymapdb.com/keymaps/callum_oakley/) and [Seniply](https://keymapdb.com/keymaps/stevep99/) layouts have popularized.
 
-I have briefly considered placing the letters more optimally, in [Colemak-DH](https://dreymar.colemak.org/) layout, but have opted not to do that for now. [Although QWERTY is a little awkward when typing English words](https://duckduckgo.com/?q=colemak+qwerty+heatmap&iar=images&t=brave), changing to Colemak would also move the Vim keys, or make me unable to use a default vim config. Besides, learning a new alpha layout is much more difficult than just the symbols and modifiers, even if only?for typing words. Perhaps later.
+Because I don't seem to be able to turn off dead keys reliably on workplace-managed Windows installs, I have added an "UnDead" (🧟) mode, activated and de-activated with combos, in which dead keys are automatically followed by a space, so that they are effectively disabled when typing on a pc that has dead keys enabled.
+
+I have briefly considered placing the letters more optimally, in [Colemak-DH](https://dreymar.colemak.org/) layout, but have opted not to do that for now. [Although QWERTY is a little awkward when typing English words](https://duckduckgo.com/?q=colemak+qwerty+heatmap&iar=images&t=brave), changing to Colemak would also move the Vim keys, or make me unable to use a default vim config. Besides, learning a new alpha layout is much more difficult than just the symbols and modifiers, even if only for typing words. Perhaps later.
 
 ------
 # QMK Userspace template
