@@ -1,6 +1,5 @@
 qmk c2json -kb bastardkb/tbkmini/v1/elitec -km fhoekstra >km.json
 keymap -c keymap-config.yaml parse -c 10 -q km.json >km.yaml
-yq -i -y 'del(.layers.L4, .layers.L5, .layers.L6, .layers.L7)' km.yaml
 # replace the layer names
 sed -i \
     -e 's/L0/BASE/g' \
