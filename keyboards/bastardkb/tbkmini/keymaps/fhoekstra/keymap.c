@@ -62,6 +62,9 @@ enum keycodes {
     OS_CTRL,
     OS_ALT,
     OS_GUI,
+    // UnDead 🧟 keys: add a space after a dead key to un-dead them
+    KC_UNDEAD_ON,
+    KC_UNDEAD_OFF,
 };
 
 const uint16_t PROGMEM combo_thumbs_outer[] = {OS_LSFT, KC_BSPC, COMBO_END};
@@ -71,6 +74,9 @@ const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_ext[] = {KC_PGDN, KC_PGUP, COMBO_END};
+// UnDead mode
+const uint16_t PROGMEM combo_qz[] = {KC_Q, KC_Z, COMBO_END};
+const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_thumbs_outer, CW_TOGG),
     COMBO(combo_jk, KC_ENT),
@@ -79,6 +85,8 @@ combo_t key_combos[] = {
     COMBO(combo_below_jk, KC_TAB),
     COMBO(combo_below_jk_ext, KC_TAB),
     COMBO(combo_below_jk_num, KC_TAB),
+    COMBO(combo_qz, KC_UNDEAD_ON),
+    COMBO(combo_psl, KC_UNDEAD_OFF),
 };
 uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
 
@@ -130,7 +138,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , _______, _______
                                             //`--------------------------'  `--------------------------'
-        )};
+        ),
+};
 
 // Caps word: when do we continue when do we stop?
 bool caps_word_press_user(uint16_t keycode) {
@@ -185,7 +194,10 @@ oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state = os_up_unqueued;
 oneshot_state os_gui_state = os_up_unqueued;
 
+bool undead_keys_enabled = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // Callum
     update_oneshot(
         &os_shft_state, KC_LSFT, OS_SHFT,
         keycode, record
@@ -203,7 +215,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         keycode, record
     );
 
+    if (keycode == KC_UNDEAD_ON) {
+        undead_keys_enabled = true;
+    } else if (keycode == KC_UNDEAD_OFF) {
+        undead_keys_enabled = false;
+    }
+
     return true;
+}
+
+void post_process_record_user(uint16_t keycode, keyrecord_t *record){
+    if (undead_keys_enabled) {
+        switch (keycode) {
+            case KC_GRV:
+            case KC_QUOT:
+            case KC_DQUO:
+            case KC_TILD:
+            case KC_CIRC:
+                if (record->event.pressed) {
+                    tap_code(KC_SPACE);
+                }
+                break;
+        }
+    }
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
