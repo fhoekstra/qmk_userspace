@@ -348,8 +348,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 280)" class="layer-NUM">
-<text x="0" y="28" class="label" id="NUM">NUM:</text>
+<g transform="translate(30, 280)" class="layer-EXT">
+<text x="0" y="28" class="label" id="EXT">EXT:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 28)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -712,8 +712,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 840)" class="layer-EXTRA (NUM+SYM)">
-<text x="0" y="28" class="label" id="EXTRA-NUMSYM">EXTRA (NUM+SYM):</text>
+<g transform="translate(30, 840)" class="layer-FUNC (NUM+SYM)">
+<text x="0" y="28" class="label" id="FUNC-NUMSYM">FUNC (NUM+SYM):</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 28)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -918,8 +918,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1120)" class="layer-L4">
-<text x="0" y="28" class="label" id="L4">L4:</text>
+<g transform="translate(30, 1120)" class="layer-NUM">
+<text x="0" y="28" class="label" id="NUM">NUM:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 28)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1087,10 +1087,22 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
+<g class="combo combopos-0">
+<path d="M728,55 h-22 a6.0,6.0 0 0 0 -6.0,6.0 v4" class="combo"/>
+<path d="M728,55 h22 a6.0,6.0 0 0 1 6.0,6.0 v4" class="combo"/>
+<rect rx="6" ry="6" x="714" y="42" width="28" height="26" class="combo"/>
+<text x="728" y="55" class="combo tap">Ent</text>
+</g>
+<g class="combo combopos-1">
+<path d="M728,111 h-22 a6.0,6.0 0 0 0 -6.0,6.0 v4" class="combo"/>
+<path d="M728,111 h22 a6.0,6.0 0 0 1 6.0,6.0 v4" class="combo"/>
+<rect rx="6" ry="6" x="714" y="98" width="28" height="26" class="combo"/>
+<text x="728" y="111" class="combo tap">Tab</text>
 </g>
 </g>
-<g transform="translate(30, 1400)" class="layer-L5">
-<text x="0" y="28" class="label" id="L5">L5:</text>
+</g>
+<g transform="translate(30, 1400)" class="layer-SHRT">
+<text x="0" y="28" class="label" id="SHRT">SHRT:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 28)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
