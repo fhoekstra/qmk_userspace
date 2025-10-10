@@ -77,14 +77,15 @@ enum keycodes {
 
 const uint16_t PROGMEM combo_bottom_inner[] = {KC_B, KC_N, COMBO_END};
 const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM combo_jk_num[] = {KC_4, KC_5, COMBO_END};
+const uint16_t PROGMEM combo_jk_ext[] = {KC_UP, KC_DOWN, COMBO_END};
+const uint16_t PROGMEM combo_jk_num[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_below_df[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_below_df_sym[] = {KC_MINS, KC_LPRN, COMBO_END};
 const uint16_t PROGMEM combo_below_df_ext[] = {MYSCOPY, MYSPASTE, COMBO_END};
 const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_num[] = {KC_4, KC_5, COMBO_END};
-const uint16_t PROGMEM combo_below_jk_ext[] = {KC_PGDN, KC_PGUP, COMBO_END};
+const uint16_t PROGMEM combo_below_jk_func[] = {KC_F4, KC_F5, COMBO_END};
 // UnDead mode
 const uint16_t PROGMEM combo_qz[] = {KC_Q, KC_Z, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
