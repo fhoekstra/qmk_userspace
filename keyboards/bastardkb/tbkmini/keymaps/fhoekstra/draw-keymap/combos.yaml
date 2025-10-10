@@ -3,6 +3,6 @@ combos:
     - { tk: [D, F], k: Esc, l: [BASE], align: "top" }
     - { p: [31, 32], k: Tab, l: [BASE, NUM, "EXTRA (NUM+SYM)"], align: "top" }
     - { p: [27, 28], k: Tab, l: [BASE, SYM, "EXTRA (NUM+SYM)"], align: "top" }
-    - { p: [36, 41], k: CAPS word, l: [BASE], align: "bottom" }
+    - { tk: [B, N], k: CAPS word, l: [BASE], align: "bottom" }
     - { tk: [Q, Z], k: 🧟 On, l: [BASE], align: "left" }
     - { tk: [P, /], k: 🧟 Off, l: [BASE], align: "right" }

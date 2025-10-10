@@ -1,98 +1,53 @@
 layout: {qmk_keyboard: bastardkb/tbkmini/v1/elitec, layout_name: LAYOUT_split_3x6_3}
 layers:
   BASE:
-  - [TAB, Q, W, E, R, T, Y, U, I, O]
-  - - P
-    - BSPC
-    - {t: ^, h: sticky}
-    - A
-    - S
-    - D
-    - F
-    - G
-    - H
-    - J
-  - - K
-    - L
-    - ;
-    - ''''
-    - {t: ⇧, h: sticky}
-    - Z
-    - X
-    - C
-    - V
-    - B
+  - ['', Q, W, E, R, T, Y, U, I, O]
+  - [P, '', '', A, S, D, F, G, H, J]
+  - [K, L, '''', '', '', Z, X, C, V, B]
   - - N
     - M
     - ','
     - .
     - /
-    - ESC
+    - ''
+    - MO( EXT)
     - {t: ⇧, h: sticky}
-    - SPC
     - MO( NUM)
-    - TAB
-  - [MO( SYM), BSPC]
+    - MO( SHRT)
+  - [SPC, MO( SYM)]
   NUM:
-  - [TAB, ⇧⎇ TAB, '', '', K, '', INS, '7', '8', '9']
-  - - DEL
-    - BSPC
-    - {t: ^, h: sticky}
+  - ['', ESC, ⎇ LEFT, ^ F, ⎇ RIGHT, INS, INS, PGDN, PGUP, '']
+  - - ''
+    - ''
+    - ''
     - ⌘mod
     - ⎇mod
     - ⇧mod
     - ^mod
-    - ⇧ G
-    - '6'
-    - '0'
-  - - '1'
-    - '2'
-    - '3'
-    - ''
-    - {t: ⇧, h: sticky}
-    - ⎇ TAB
-    - ⇧^ TAB
-    - ^ TAB
-    - J
+    - {t: RALT, h: sticky}
+    - LEFT
+    - DOWN
+  - [UP, RIGHT, DEL, '', '', ^ Z, ^ X, ^ C, ^ V, '']
+  - - ''
+    - BSPC
     - HOME
-  - - END
-    - '4'
-    - '5'
-    - .
-    - /
+    - END
+    - Print Scr
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
+  - - ENT
     - {t: ▽, type: trans}
   SYM:
-  - [TAB, '~', '=', +, '{', '%', '&', '}', '*', '#']
-  - - €
-    - BSPC
-    - {t: ^, h: sticky}
-    - '`'
-    - ''''
-    - _
-    - ':'
-    - '['
-    - ']'
-    - ^mod
-  - - ⇧mod
-    - ⎇mod
-    - ⌘mod
-    - ''
-    - {t: ⇧, h: sticky}
-    - '|'
-    - '"'
-    - '-'
-    - (
-    - ^
-  - - $
+  - ['', '~', '=', +, '{', '%', '&', '}', '*', '!']
+  - ['@', '', '', '`', ':', _, '-', '[', ']', ^mod]
+  - [⇧mod, ⎇mod, ⌘mod, '', '', '|', ;, '#', (, €]
+  - - ''
     - )
-    - '!'
-    - '@'
+    - ^
+    - $
     - \
     - ''
     - {t: ▽, type: trans}
@@ -102,15 +57,65 @@ layers:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   EXTRA (NUM+SYM):
-  - [QK BOOT, F1, F2, F3, F4, F5, F6, F7, F8, F9]
-  - [F10, Print Scr, RGB TOG, ⌘mod, ⎇mod, ⇧mod, ^mod, Vol +, LEFT, DOWN]
-  - [UP, RIGHT, F11, RGB VAI, RGB MOD, '', '', ⇧^ C, ⇧^ V, Vol -]
+  - ['', STOP, MPLY, Vol -, Vol +, KB MUTE, QK BOOT, F7, F8, F9]
+  - [F10, '', '', ⌘mod, ⎇mod, ⇧mod, ^mod, RM TOGG, Brt -, F1]
+  - [F2, F3, F11, '', '', KB MUTE, '', ⇧^ C, ⇧^ V, RM NEXT]
   - - Brt +
-    - PGDN
-    - PGUP
-    - Brt -
+    - F4
+    - F5
+    - F6
     - F12
-    - RGB VAD
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - ENT
+    - {t: ▽, type: trans}
+  L4:
+  - ['', ⇧⎇ TAB, '', '', '', '', INS, '7', '8', '9']
+  - - ''
+    - ''
+    - ''
+    - ⌘mod
+    - ⎇mod
+    - ⇧mod
+    - ^mod
+    - {t: RALT, h: sticky}
+    - '0'
+    - '1'
+  - ['2', '3', DEL, '', '', ⎇ TAB, ⇧^ TAB, ^ TAB, '', '']
+  - - END
+    - '4'
+    - '5'
+    - '6'
+    - Print Scr
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - ENT
+    - {t: ▽, type: trans}
+  L5:
+  - ['', ⇧⎇ TAB, ⇧^ TAB, ^ TAB, ⎇ TAB, '', '', '', '', '']
+  - ['', '', '', ⇧⎇ TAB, ⇧^ TAB, ^ TAB, ⎇ TAB, '', '', ^mod]
+  - - ⇧mod
+    - {t: RALT, h: sticky}
+    - ⌘mod
+    - ''
+    - ''
+    - ''
+    - ''
+    - ⇧^ C
+    - ⇧^ V
+    - ''
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
