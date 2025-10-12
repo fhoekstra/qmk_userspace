@@ -86,6 +86,7 @@ const uint16_t PROGMEM combo_below_df_ext[] = {MYSCOPY, MYSPASTE, COMBO_END};
 const uint16_t PROGMEM combo_below_jk[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_num[] = {KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM combo_below_jk_func[] = {KC_F4, KC_F5, COMBO_END};
+const uint16_t PROGMEM combo_below_jk_ext[] = {KC_BSPC, KC_HOME, COMBO_END};
 // UnDead mode
 const uint16_t PROGMEM combo_qz[] = {KC_Q, KC_Z, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
@@ -100,6 +101,7 @@ combo_t key_combos[] = {
     COMBO(combo_below_jk, KC_TAB),
     COMBO(combo_below_jk_ext, KC_TAB),
     COMBO(combo_below_jk_num, KC_TAB),
+    COMBO(combo_below_jk_func, KC_TAB),
     COMBO(combo_qz, KC_UNDEAD_ON),
     COMBO(combo_psl, KC_UNDEAD_OFF),
 };
