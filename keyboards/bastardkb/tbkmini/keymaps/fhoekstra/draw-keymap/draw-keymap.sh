@@ -5,7 +5,7 @@ sed -i \
     -e 's/L0/BASE/g' \
     -e 's/L1/EXT/g' \
     -e 's/L2/SYM/g' \
-    -e 's/L3/FUNC (NUM+SYM)/g'\
+    -e 's/L3/FUNC (EXT+SYM)/g'\
     -e 's/L4/NUM/g' \
     -e 's/L5/SHRT/g' \
     -e 's/AltGr 5/€/g' \

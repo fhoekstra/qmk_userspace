@@ -56,7 +56,7 @@ layers:
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  FUNC (NUM+SYM):
+  FUNC (EXT+SYM):
   - ['', STOP, MPLY, Vol -, Vol +, KB MUTE, QK BOOT, F7, F8, F9]
   - [F10, '', '', ⌘mod, ⎇mod, ⇧mod, ^mod, RM TOGG, Brt -, F1]
   - [F2, F3, F11, '', '', KB MUTE, '', ⇧^ C, ⇧^ V, RM NEXT]

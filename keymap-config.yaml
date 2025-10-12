@@ -50,7 +50,7 @@ parse_config:
         L0: BASE
         L1: NUM
         L2: SYM
-        L3: EXTRA (NUM+SYM)
+        L3: EXTRA (EXT+SYM)
     mark_alternate_layer_activators: false
     modifier_fn_map:
         left_ctrl: Ctl
