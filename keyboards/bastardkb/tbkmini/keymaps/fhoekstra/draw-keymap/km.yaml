@@ -27,7 +27,7 @@ layers:
     - {t: RALT, h: sticky}
     - LEFT
     - DOWN
-  - [UP, RIGHT, DEL, '', '', '', '', '', ESC, '']
+  - [UP, RIGHT, DEL, '', '', '', '', TAB, ESC, '']
   - - ''
     - BSPC
     - HOME
