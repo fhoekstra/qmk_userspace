@@ -1,20 +1,3 @@
-/*
- * Copyright 2021 Quentin LEBASTARD <qlebastard@gmail.com>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include QMK_KEYBOARD_H
 
 #include "oneshot.h"
@@ -76,9 +59,6 @@ enum keycodes {
 };
 
 const uint16_t PROGMEM combo_bottom_inner[] = {KC_B, KC_N, COMBO_END};
-const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM combo_jk_ext[] = {KC_UP, KC_DOWN, COMBO_END};
-const uint16_t PROGMEM combo_jk_num[] = {KC_1, KC_2, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_below_df[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_below_df_sym[] = {KC_MINS, KC_LPRN, COMBO_END};
@@ -92,8 +72,6 @@ const uint16_t PROGMEM combo_qz[] = {KC_Q, KC_Z, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_bottom_inner, CW_TOGG),
-    COMBO(combo_jk, KC_ENT),
-    COMBO(combo_jk_num, KC_ENT),
     COMBO(combo_df, KC_ESC),
     COMBO(combo_below_df, KC_TAB),
     COMBO(combo_below_df_ext, KC_TAB),
