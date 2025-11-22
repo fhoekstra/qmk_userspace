@@ -149,9 +149,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            XXXXXXX , KC_STOP, KC_MPLY,  VOLDN ,  VOLUP ,  MUTE  ,                      QK_BOOT,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           XXXXXXX , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, RM_TOGG,                       BRTUP ,  KC_F1 ,  KC_F2 ,  KC_F3 , KC_F11 , XXXXXXX,
+           XXXXXXX , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, RM_TOGG,                       BRTUP ,  KC_F4 ,  KC_F5 ,  KC_F6 , KC_F11 , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           XXXXXXX ,  MUTE  , XXXXXXX, MYSCOPY,MYSPASTE, RM_NEXT,                       BRTDN ,  KC_F4 ,  KC_F5 ,  KC_F6 , KC_F12 , XXXXXXX,
+           XXXXXXX ,  MUTE  , XXXXXXX, MYSCOPY,MYSPASTE, RM_NEXT,                       BRTDN ,  KC_F1 ,  KC_F2 ,  KC_F3 , KC_F12 , XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , KC_ENT , _______
                                             //`--------------------------'  `--------------------------'
@@ -161,9 +161,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
            XXXXXXX , AS_TAB , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_INS ,  KC_7  ,  KC_8  ,  KC_9  , XXXXXXX, XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           XXXXXXX , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, OS_RALT,                       KC_0  ,  KC_1  ,  KC_2  ,  KC_3  , KC_DEL , XXXXXXX,
+           XXXXXXX , OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, OS_RALT,                       KC_0  ,  KC_4  ,  KC_5  ,  KC_6  , KC_DEL , XXXXXXX,
         //|--------+----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----+--------|
-           XXXXXXX ,  A_TAB , CS_TAB ,  C_TAB , XXXXXXX, XXXXXXX,                      KC_END ,  KC_4  ,  KC_5  ,  KC_6  , KC_PSCR, XXXXXXX,
+           XXXXXXX ,  A_TAB , CS_TAB ,  C_TAB , XXXXXXX, XXXXXXX,                      KC_END ,  KC_1  ,  KC_2  ,  KC_3  , KC_PSCR, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                                 _______, _______, _______,   _______ , KC_ENT , _______
                                             //`--------------------------'  `--------------------------'
