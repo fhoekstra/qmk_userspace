@@ -58,12 +58,12 @@ layers:
     - {t: ▽, type: trans}
   FUNC (EXT+SYM):
   - ['', STOP, MPLY, Vol -, Vol +, KB MUTE, QK BOOT, F7, F8, F9]
-  - [F10, '', '', ⌘mod, ⎇mod, ⇧mod, ^mod, RM TOGG, Brt -, F1]
-  - [F2, F3, F11, '', '', KB MUTE, '', ⇧^ C, ⇧^ V, RM NEXT]
+  - [F10, '', '', ⌘mod, ⎇mod, ⇧mod, ^mod, RM TOGG, Brt -, F4]
+  - [F5, F6, F11, '', '', KB MUTE, '', ⇧^ C, ⇧^ V, RM NEXT]
   - - Brt +
-    - F4
-    - F5
-    - F6
+    - F1
+    - F2
+    - F3
     - F12
     - ''
     - {t: ▽, type: trans}
@@ -73,7 +73,7 @@ layers:
   - - ENT
     - {t: ▽, type: trans}
   NUM:
-  - ['', ⇧⎇ TAB, '', '', '', '', INS, '7', '8', '9']
+  - ['', ⇧⎇ TAB, '', '', '', '', '', '7', '8', '9']
   - - ''
     - ''
     - ''
@@ -83,13 +83,13 @@ layers:
     - ^mod
     - {t: RALT, h: sticky}
     - '0'
-    - '1'
-  - ['2', '3', DEL, '', '', ⎇ TAB, ⇧^ TAB, ^ TAB, '', '']
-  - - END
     - '4'
-    - '5'
-    - '6'
-    - Print Scr
+  - ['5', '6', ., '', '', ⎇ TAB, ⇧^ TAB, ^ TAB, V, '']
+  - - ''
+    - '1'
+    - '2'
+    - '3'
+    - /
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

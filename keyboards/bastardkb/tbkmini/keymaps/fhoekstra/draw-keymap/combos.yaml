@@ -1,10 +1,4 @@
 combos:
-    - {
-          p: [19, 20],
-          k: Ent,
-          l: [BASE, EXT, NUM, "FUNC (EXT+SYM)"],
-          align: "top",
-      }
     - { tk: [D, F], k: Esc, l: [BASE], align: "top" }
     - {
           p: [31, 32],
