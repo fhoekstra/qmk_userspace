@@ -1,7 +1,6 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["bastardkb/dilemma/3x5_3_procyon", "vendor"],
-        ["bastardkb/dilemma/4x6_4_procyon", "vendor"]
+        ["bastardkb/dilemma/3x5_3_procyon", "fhoekstra"],
     ]
 }
