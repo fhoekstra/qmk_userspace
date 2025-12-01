@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
              KC_A  ,  KC_S  , KC_D   ,  KC_F  , KC_G   ,                       KC_H  ,  KC_J  ,  KC_K  ,  KC_L  , KC_QUOT,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-             PT_Z  ,  KC_X  ,  KC_C  ,  KC_V  , KC_B   ,                       KC_N  ,  KC_M  , KC_COMM, KC_DOT , PT_SLSH,
+             PT_Z  ,  KC_X  ,  KC_C  ,  KC_V  , KC_B   ,                       KC_N  ,  KC_M  , KC_COMM, KC_DOT , KC_SLSH,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                        LA_EXT , OS_LSFT, LA_NUM ,    LA_SHRT, KC_SPC , LA_SYM
                                    //`--------------------------'  `--------------------------'
@@ -176,13 +176,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /** \brief Mouse emulation and pointer functions. */
   [LAYER_POINTER] = LAYOUT_split_3x5_3(
         //,--------------------------------------------.                    ,--------------------------------------------.
-            QK_BOOT,  EE_CLR, XXXXXXX, DPI_MOD, S_D_MOD,                      S_D_MOD, DPI_MOD, XXXXXXX,  EE_CLR, QK_BOOT,
+            QK_BOOT,  EE_CLR, XXXXXXX, DPI_MOD, S_D_MOD,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
+            KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            _______, DRGSCRL, SNIPING, MS_BTN3, XXXXXXX,                      XXXXXXX, MS_BTN3, SNIPING, DRGSCRL, _______,
+            _______, DRGSCRL, SNIPING, MS_BTN3, XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                       MS_BTN3, MS_BTN2, MS_BTN1,    MS_BTN1, MS_BTN2, MS_BTN3
+                                       MS_BTN3, MS_BTN2, MS_BTN1,   _______ , _______, _______
                                    //`--------------------------'  `--------------------------'
   ),
 };
