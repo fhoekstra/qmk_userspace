@@ -13,7 +13,7 @@ Because I want to type comfortably.
 
 ### Just do touch-typing then?
 
-[Touch-typing maps](https://duckduckgo.com/?q=touch-typing&t=brave&ia=images&iax=images) on a regular keyboard are nice for the letters a-z, but not so much for symbols, modifiers (`Shift`, `Ctrl`, `Alt`, `Cmd/Win/Super`) and special keys like `ESC` and `Backspace`. Those cover large areas of a normal keyboard, and all of that work is supposed to be done by the pinky fingers.
+[Touch-typing maps](https://duckduckgo.com/?q=touch-typing&t=brave&ia=images&iax=images) on a regular keyboard are nice for the letters a-z, but not so much for symbols, modifiers (`Shift`, `Ctrl`, `Alt`, `Cmd/Win/Super`) and special keys like `Esc`, `Tab` and `Backspace`. Those cover large areas of a normal keyboard, and all of that work is supposed to be done by the pinky fingers.
 
 As a programmer, I like using great tools to help me code. An IDE with good autocomplete means I don't normally type out full words when coding. What I do type a lot, is symbols: `(\`{}:['a-b', "a_b/c"])`
 
