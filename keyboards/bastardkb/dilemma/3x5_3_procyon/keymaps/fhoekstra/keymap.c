@@ -85,7 +85,6 @@ const uint16_t PROGMEM combo_odot[] = {KC_O, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_bottom_inner, CW_TOGG),
-    COMBO(combo_df, KC_ESC),
     COMBO(combo_below_df, KC_TAB),
     COMBO(combo_below_df_ext, KC_TAB),
     COMBO(combo_below_df_sym, KC_TAB),

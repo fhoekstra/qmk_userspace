@@ -283,24 +283,18 @@ path.combo {
 </text>
 </g>
 <g class="combo combopos-0">
-<path d="M168,55 h-22 a6.0,6.0 0 0 0 -6.0,6.0 v4" class="combo"/>
-<path d="M168,55 h22 a6.0,6.0 0 0 1 6.0,6.0 v16" class="combo"/>
-<rect rx="6" ry="6" x="154" y="42" width="28" height="26" class="combo"/>
-<text x="168" y="55" class="combo tap">Esc</text>
-</g>
-<g class="combo combopos-1">
 <path d="M560,111 h-22 a6.0,6.0 0 0 0 -6.0,6.0 v16" class="combo"/>
 <path d="M560,111 h22 a6.0,6.0 0 0 1 6.0,6.0 v4" class="combo"/>
 <rect rx="6" ry="6" x="546" y="98" width="28" height="26" class="combo"/>
 <text x="560" y="111" class="combo tap">Tab</text>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-1">
 <path d="M168,111 h-22 a6.0,6.0 0 0 0 -6.0,6.0 v4" class="combo"/>
 <path d="M168,111 h22 a6.0,6.0 0 0 1 6.0,6.0 v16" class="combo"/>
 <rect rx="6" ry="6" x="154" y="98" width="28" height="26" class="combo"/>
 <text x="168" y="111" class="combo tap">Tab</text>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-2">
 <path d="M364,183 h-106 a6.0,6.0 0 0 1 -6.0,-6.0 v-4" class="combo"/>
 <path d="M364,183 h106 a6.0,6.0 0 0 0 6.0,-6.0 v-4" class="combo"/>
 <rect rx="6" ry="6" x="350" y="170" width="28" height="26" class="combo"/>
@@ -308,7 +302,7 @@ path.combo {
 <tspan x="364" dy="-0.6em">CAPS</tspan><tspan x="364" dy="1.2em">word</tspan>
 </text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-3">
 <path d="M673,106 v-50 a6.0,6.0 0 0 0 -6.0,-6.0 h-4" class="combo"/>
 <path d="M673,106 v50 a6.0,6.0 0 0 1 -6.0,6.0 h-4" class="combo"/>
 <rect rx="6" ry="6" x="659" y="93" width="28" height="26" class="combo"/>
@@ -316,7 +310,7 @@ path.combo {
 <tspan x="673" dy="-0.6em">🧟</tspan><tspan x="673" dy="1.2em">On</tspan>
 </text>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-4">
 <path d="M729,129 v-50 a6.0,6.0 0 0 0 -6.0,-6.0 h-4" class="combo"/>
 <path d="M729,129 v50 a6.0,6.0 0 0 1 -6.0,6.0 h-4" class="combo"/>
 <rect rx="6" ry="6" x="715" y="116" width="28" height="26" class="combo"/>

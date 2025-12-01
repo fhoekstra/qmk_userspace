@@ -1,5 +1,4 @@
 combos:
-    - { tk: [D, F], k: Esc, l: [BASE], align: "top" }
     - {
           p: [26, 27],
           k: Tab,
