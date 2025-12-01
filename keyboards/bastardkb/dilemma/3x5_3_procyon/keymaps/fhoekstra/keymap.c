@@ -188,6 +188,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+// #define DILEMMA_AUTO_SNIPING_ON_LAYER _EXT
+#define DILEMMA_MINIMUM_SNIPING_DPI 500
+#define DILEMMA_SNIPING_DPI_CONFIG_STEP 200
+#define Dilemma_MINIMUM_DEFAULT_DPI 4000
+#define Dilemma_MAXIMUM_DEFAULT_DPI 32000
+#define Dilemma_DEFAULT_DPI_CONFIG_STEP 4000
+
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef DILEMMA_AUTO_SNIPING_ON_LAYER
 layer_state_t layer_state_set_user(layer_state_t state) {
