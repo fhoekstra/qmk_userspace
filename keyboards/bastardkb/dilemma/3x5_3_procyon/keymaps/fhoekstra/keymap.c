@@ -72,7 +72,7 @@ enum keycodes {
 };
 
 const uint16_t PROGMEM combo_bottom_inner[] = {KC_B, KC_N, COMBO_END};
-const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM combo_l_quote[] = {KC_L, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM combo_below_df[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_below_df_sym[] = {KC_MINS, KC_LPRN, COMBO_END};
 const uint16_t PROGMEM combo_below_df_ext[] = {MYSCOPY, MYSPASTE, COMBO_END};
@@ -85,6 +85,7 @@ const uint16_t PROGMEM combo_odot[] = {KC_O, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_bottom_inner, CW_TOGG),
+    COMBO(combo_l_quote, KC_COLON),
     COMBO(combo_below_df, KC_TAB),
     COMBO(combo_below_df_ext, KC_TAB),
     COMBO(combo_below_df_sym, KC_TAB),

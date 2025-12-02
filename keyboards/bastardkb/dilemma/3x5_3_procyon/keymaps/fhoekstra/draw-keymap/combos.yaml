@@ -7,5 +7,6 @@ combos:
       }
     - { p: [22, 23], k: Tab, l: [BASE, SYM, EXT], align: "top" }
     - { tk: [B, N], k: CAPS word, l: [BASE], align: "bottom" }
-    - { tk: [O, .], k: 🧟 On, l: [BASE], align: "right" }
+    - { tk: [L, "'"], k: ":", l: [BASE], align: "top" }
+    - { tk: [O, .], k: 🧟 On, l: [BASE], align: "left" }
     - { tk: [P, /], k: 🧟 Off, l: [BASE], align: "right" }
