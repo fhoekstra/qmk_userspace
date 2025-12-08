@@ -2,7 +2,9 @@
 
 This repository contains keymaps for my open-source wired [keyboards](./keyboards).
 
-![A picture of my TBKMini keyboard, a split ergonomically formed Manuform keyboard with keys arranged in a well pattern. The halves are connected by a TRRS cable and the right half is plugged into the pc with a USB-C cable. Each hand has 3 rows of 5 keys (that is, 2 columns for the index, 2 for the pinky, and 1 for each other finger) and  a tilted thumb cluster with 3 keys. Each key has an individual RGB, all are set to pink in the image.](https://github.com/user-attachments/assets/ac539984-04fb-44c9-b3fd-3959a3ffb93f)
+![A picture of my TBKMini keyboard, a split ergonomically formed Manuform keyboard with keys arranged in a well pattern. The halves are connected by a TRRS cable and the right half is plugged into the pc with a USB-C cable. Each hand has 3 rows of 6 keys (that is, 2 columns for the index, 2 for the pinky, and 1 for each other finger) and  a tilted thumb cluster with 3 keys. Each key has an individual RGB, all are set to pink in the image. The frame is 3D-printed in Prusa Black and the keycaps are white. Both halves are tilted outwards (tented).
+In front of it is a Dilemma V3 keyboard, a flat board with a similar layout: 3x5, 3 thumb keys per side, both halves connectes by TRRS. The right half has a trackpad on the inside. RGB light glowa from the switches and from the underside.](https://github.com/user-attachments/assets/0db2ddbe-89f1-4fe2-af8f-360ae482ef73)
+
 
 [Drawn with caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer):
 ![A visual representation of my keymap for the BastardKB Dilemma V3 split keyboard, with Callum-style one-shot mods, capsword on double-tap of a dedicated shift thumbkey, Seniply-inspired layers, a numpad layout on number layers and a mouse layer with mouse buttons and functions like dragscroll and snipe for the included touchpad](./keyboards/bastardkb/dilemma/3x5_3_procyon/keymaps/fhoekstra/draw-keymap/km.svg)
