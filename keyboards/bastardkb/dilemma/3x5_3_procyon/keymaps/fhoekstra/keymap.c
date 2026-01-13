@@ -27,7 +27,6 @@
 #define OS_LCTL OSM(MOD_LCTL)
 #define OS_RCTL OSM(MOD_RCTL)
 #define OS_LALT OSM(MOD_LALT)
-#define OS_RALT OSM(MOD_RALT)
 // Copy-paste shortcodes
 #define MYCOPY C(KC_C)
 #define MYPASTE C(KC_V)
@@ -65,7 +64,8 @@ enum keycodes {
     OS_SHFT = SAFE_RANGE,
     OS_CTRL,
     OS_ALT,
-    OS_GUI,
+    OS_RALTC,
+    OS_GUIC,
     // UnDead 🧟 keys: add a space after a dead key to un-dead them
     KC_UNDEAD_ON,
     KC_UNDEAD_OFF,
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,--------------------------------------------.                    ,--------------------------------------------.
             KC_ESC ,  BCK   ,  FND   ,  FWD   , KC_INS ,                      KC_INS , KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, OS_RALT,                      KC_LEFT, KC_DOWN,  KC_UP ,KC_RIGHT, KC_DEL ,
+            OS_GUIC, OS_ALT , OS_SHFT, OS_CTRL, OS_RALTC,                      KC_LEFT, KC_DOWN,  KC_UP ,KC_RIGHT, KC_DEL ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             XXXXXXX, XXXXXXX, KC_TAB , KC_ESC, XXXXXXX,                      XXXXXXX, KC_BSPC, KC_HOME, KC_END , KC_PSCR,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,--------------------------------------------.                    ,--------------------------------------------.
             KC_TILD, KC_EQL , KC_PLUS, KC_LCBR, KC_PERC,                      KC_AMPR, KC_RCBR, KC_ASTR, KC_EXLM,  KC_AT ,
         //|----*---+----*---+---*----+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            KC_GRV ,KC_COLON, KC_UNDS, KC_MINS, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUI ,
+            KC_GRV ,KC_COLON, KC_UNDS, KC_MINS, KC_LBRC,                      KC_RBRC, OS_CTRL, OS_SHFT, OS_ALT , OS_GUIC,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             KC_PIPE, KC_SCLN, KC_HASH, KC_LPRN, KC_LABK,                      KC_RABK, KC_RPRN, KC_CIRC, KC_DLR , KC_BSLS,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -141,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,--------------------------------------------.                    ,--------------------------------------------.
             KC_STOP, KC_MPLY,  VOLDN ,  VOLUP ,  MUTE  ,                      QK_BOOT,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, RM_TOGG,                       BRTUP ,  KC_F4 ,  KC_F5 ,  KC_F6 , KC_F11 ,
+            OS_GUIC, OS_ALT , OS_SHFT, OS_CTRL, RM_TOGG,                       BRTUP ,  KC_F4 ,  KC_F5 ,  KC_F6 , KC_F11 ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
              MUTE  , XXXXXXX, MYSCOPY,MYSPASTE, RM_NEXT,                       BRTDN ,  KC_F1 ,  KC_F2 ,  KC_F3 , KC_F12 ,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -153,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,--------------------------------------------.                    ,--------------------------------------------.
             AS_TAB , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_7  ,  KC_8  ,  KC_9  , XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            OS_GUI , OS_ALT , OS_SHFT, OS_CTRL, OS_RALT,                       KC_0  ,  KC_4  ,  KC_5  ,  KC_6  , KC_DOT ,
+            OS_GUIC, OS_ALT , OS_SHFT, OS_CTRL, OS_RALTC,                      KC_0  ,  KC_4  ,  KC_5  ,  KC_6  , KC_DOT ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
              A_TAB , CS_TAB ,  C_TAB ,  KC_V  , XXXXXXX,                      XXXXXXX,  KC_1  ,  KC_2  ,  KC_3  , KC_SLSH,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -163,9 +163,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SHRT] = LAYOUT_split_3x5_3(
         //,--------------------------------------------.                    ,--------------------------------------------.
-            AS_TAB , CS_TAB ,  C_TAB ,  A_TAB , XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+            AS_TAB , CS_TAB,  CS_TAB , AS_TAB , XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            AS_TAB , CS_TAB ,  C_TAB ,  A_TAB , XXXXXXX,                     XXXXXXX , OS_CTRL, OS_SHFT, OS_RALT, OS_GUI ,
+            AS_TAB , CS_TAB ,  C_TAB ,  A_TAB , XXXXXXX,                     XXXXXXX , OS_CTRL, OS_SHFT, OS_ALT , OS_GUIC,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             XXXXXXX, XXXXXXX, MYSCOPY,MYSPASTE, XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -250,8 +250,8 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case OS_SHFT:
     case OS_CTRL:
     case OS_ALT:
-    case OS_RALT:
-    case OS_GUI:
+    case OS_RALTC:
+    case OS_GUIC:
         return true;
     default:
         return false;
@@ -261,6 +261,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
 oneshot_state os_shft_state = os_up_unqueued;
 oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state = os_up_unqueued;
+oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_gui_state = os_up_unqueued;
 
 bool undead_keys_enabled = false;
@@ -280,11 +281,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         keycode, record
     );
     update_oneshot(
-        &os_alt_state, KC_RALT, OS_RALT,
+        &os_ralt_state, KC_RALT, OS_RALTC,
         keycode, record
     );
     update_oneshot(
-        &os_gui_state, KC_LGUI, OS_GUI,
+        &os_gui_state, KC_LGUI, OS_GUIC,
         keycode, record
     );
 
