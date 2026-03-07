@@ -69,6 +69,10 @@ enum keycodes {
     // UnDead 🧟 keys: add a space after a dead key to un-dead them
     KC_UNDEAD_ON,
     KC_UNDEAD_OFF,
+    KC_IS_MAC,
+    KC_IS_NOT_MAC,
+    // Custom keycodes for common shortcuts, to translate between Mac and other OS
+    CLOSE_T,
 };
 
 const uint16_t PROGMEM combo_bottom_inner[] = {KC_B, KC_N, COMBO_END};
@@ -83,6 +87,9 @@ const uint16_t PROGMEM combo_below_jk_ext[] = {KC_BSPC, KC_HOME, COMBO_END};
 // UnDead mode
 const uint16_t PROGMEM combo_odot[] = {KC_O, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
+// Temporary manual Mac mode switch
+const uint16_t PROGMEM combo_wx[] = {KC_W, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_ce[] = {KC_C, KC_E, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_bottom_inner, CW_TOGG),
     COMBO(combo_l_quote, KC_COLON),
@@ -95,6 +102,8 @@ combo_t key_combos[] = {
     COMBO(combo_below_jk_func, KC_TAB),
     COMBO(combo_odot, KC_UNDEAD_ON),
     COMBO(combo_psl, KC_UNDEAD_OFF),
+    COMBO(combo_wx, KC_IS_MAC),
+    COMBO(combo_ce, KC_IS_NOT_MAC),
 };
 uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
 
@@ -163,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SHRT] = LAYOUT_split_3x5_3(
         //,--------------------------------------------.                    ,--------------------------------------------.
-            AS_TAB , CS_TAB,  CS_TAB , AS_TAB , XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+            AS_TAB , CLOSE_T,  CS_TAB , AS_TAB , XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             AS_TAB , CS_TAB ,  C_TAB ,  A_TAB , XXXXXXX,                     XXXXXXX , OS_CTRL, OS_SHFT, OS_ALT , OS_GUIC,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
@@ -265,6 +274,22 @@ oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_gui_state = os_up_unqueued;
 
 bool undead_keys_enabled = false;
+bool is_mac = false;
+
+void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode) {
+            case CLOSE_T:
+                if (is_mac) {
+                    tap_code16(G(KC_W));
+                }
+                else {
+                    tap_code16(C(KC_W));
+                }
+                break;
+        }
+    }
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Callum
@@ -295,8 +320,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         undead_keys_enabled = false;
     }
 
+    if (keycode == KC_IS_MAC) {
+        is_mac = true;
+    } else if (keycode == KC_IS_NOT_MAC) {
+        is_mac = false;
+    }
+
+    handle_custom_shortcut_keycodes(keycode, record);
+
     return true;
 }
+
+// bool process_detected_host_os_user(os_variant_t detected_os) {
+//     if (detected_os == OS_MACOS || detected_os == OS_IOS) {
+//         is_mac = true;
+//     } else {
+//         is_mac = false;
+//     }
+//     return true;
+// }
 
 void post_process_record_user(uint16_t keycode, keyrecord_t *record){
     if (undead_keys_enabled) {
