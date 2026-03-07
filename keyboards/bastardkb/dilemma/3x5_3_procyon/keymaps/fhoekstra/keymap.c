@@ -467,14 +467,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// bool process_detected_host_os_user(os_variant_t detected_os) {
-//     if (detected_os == OS_MACOS || detected_os == OS_IOS) {
-//         is_mac = true;
-//     } else {
-//         is_mac = false;
-//     }
-//     return true;
-// }
+bool process_detected_host_os_user(os_variant_t detected_os) {
+    if (detected_os == OS_MACOS || detected_os == OS_IOS) {
+        is_mac = true;
+    } else {
+        is_mac = false;
+    }
+    return true;
+}
 
 void post_process_record_user(uint16_t keycode, keyrecord_t *record){
     if (undead_keys_enabled) {
