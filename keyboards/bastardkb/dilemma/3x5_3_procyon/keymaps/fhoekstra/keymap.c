@@ -390,17 +390,17 @@ void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
                     tap_code16(A(S(KC_TAB)));
                 }
                 break;
-             case NEXT_WS: // Next workspace: Ctrl+Right on Mac, Ctrl+Win+Right elsewhere
+             case NEXT_WS: // Next workspace: Cmd+Right on my Mac (changed from Ctrl+Right), Ctrl+Win+Right elsewhere
                 if (is_mac) {
-                    tap_code16(C(KC_RIGHT));
+                    tap_code16(G(KC_RIGHT));
                 }
                 else {
                     tap_code16(C(G(KC_RIGHT)));
                 }
                 break;
-             case PREV_WS: // Previous workspace: Ctrl+Left on Mac, Ctrl+Win+Left elsewhere
+             case PREV_WS: // Previous workspace: Cmd+Left on my Mac (changed from Ctrl+Left), Ctrl+Win+Left elsewhere
                 if (is_mac) {
-                    tap_code16(C(KC_LEFT));
+                    tap_code16(G(KC_LEFT));
                 }
                 else {
                     tap_code16(C(G(KC_LEFT)));
