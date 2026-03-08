@@ -376,7 +376,7 @@ void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
                 break;
              case NXT_WND: // Next window: Cmd+` on Mac, Alt+Tab elsewhere
                 if (is_mac) {
-                    tap_code16(G(KC_GRV));
+                    tap_code16(G(KC_TAB));
                 }
                 else {
                     tap_code16(A(KC_TAB));
@@ -384,7 +384,7 @@ void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
                 break;
              case PRV_WND: // Previous window: Cmd+Shift+` on Mac, Alt+Shift+Tab elsewhere
                 if (is_mac) {
-                    tap_code16(G(S(KC_GRV)));
+                    tap_code16(G(S(KC_TAB)));
                 }
                 else {
                     tap_code16(A(S(KC_TAB)));
