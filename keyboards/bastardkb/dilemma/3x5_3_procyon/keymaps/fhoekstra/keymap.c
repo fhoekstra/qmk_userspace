@@ -27,11 +27,6 @@
 #define OS_LCTL OSM(MOD_LCTL)
 #define OS_RCTL OSM(MOD_RCTL)
 #define OS_LALT OSM(MOD_LALT)
-// Copy-paste shortcodes
-#define MYCOPY C(KC_C)
-#define MYPASTE C(KC_V)
-#define MYSCOPY S(C(KC_C))
-#define MYSPASTE S(C(KC_V))
 // Misc keycodes
 #define VOLUP KC_KB_VOLUME_UP
 #define VOLDN KC_KB_VOLUME_DOWN
@@ -44,9 +39,6 @@
 #define A_TAB A(KC_TAB)
 #define AS_TAB S(A(KC_TAB))
 #define EURO RALT(KC_5)
-#define FWD A(KC_RIGHT)
-#define BCK A(KC_LEFT)
-#define FND C(KC_F)
 
 enum custom_layers {
     _BASE,
@@ -69,6 +61,26 @@ enum keycodes {
     // UnDead 🧟 keys: add a space after a dead key to un-dead them
     KC_UNDEAD_ON,
     KC_UNDEAD_OFF,
+    KC_IS_MAC,
+    KC_IS_NOT_MAC,
+    // Custom keycodes for common shortcuts, to translate between Mac and other OS
+    CLOSE_T,
+    OPEN_T,
+    FIND,
+    FWD,
+    BACK,
+    MYCUT,
+    MYCOPY,
+    MYPASTE,
+    MYSCOPY,
+    MYSPASTE,
+    REFRESH,
+    NXT_WRD,
+    PRV_WRD,
+    NXT_WND,
+    PRV_WND,
+    NEXT_WS,
+    PREV_WS,
 };
 
 const uint16_t PROGMEM combo_bottom_inner[] = {KC_B, KC_N, COMBO_END};
@@ -83,6 +95,9 @@ const uint16_t PROGMEM combo_below_jk_ext[] = {KC_BSPC, KC_HOME, COMBO_END};
 // UnDead mode
 const uint16_t PROGMEM combo_odot[] = {KC_O, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combo_psl[] = {KC_P, KC_SLSH, COMBO_END};
+// Temporary manual Mac mode switch
+const uint16_t PROGMEM combo_wx[] = {KC_W, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_ce[] = {KC_C, KC_E, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_bottom_inner, CW_TOGG),
     COMBO(combo_l_quote, KC_COLON),
@@ -95,6 +110,8 @@ combo_t key_combos[] = {
     COMBO(combo_below_jk_func, KC_TAB),
     COMBO(combo_odot, KC_UNDEAD_ON),
     COMBO(combo_psl, KC_UNDEAD_OFF),
+    COMBO(combo_wx, KC_IS_MAC),
+    COMBO(combo_ce, KC_IS_NOT_MAC),
 };
 uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
 
@@ -115,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EXT] = LAYOUT_split_3x5_3(
         //,--------------------------------------------.                    ,--------------------------------------------.
-            KC_ESC ,  BCK   ,  FND   ,  FWD   , KC_INS ,                      KC_INS , KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX,
+            KC_ESC ,  BACK  ,  FIND  ,  FWD   , KC_INS ,                      KC_INS , KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             OS_GUIC, OS_ALT , OS_SHFT, OS_CTRL, OS_RALTC,                      KC_LEFT, KC_DOWN,  KC_UP ,KC_RIGHT, KC_DEL ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
@@ -163,11 +180,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SHRT] = LAYOUT_split_3x5_3(
         //,--------------------------------------------.                    ,--------------------------------------------.
-            AS_TAB , CS_TAB,  CS_TAB , AS_TAB , XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+            XXXXXXX, CLOSE_T, MYSCOPY,MYSPASTE, OPEN_T ,                      XXXXXXX, PRV_WRD, NXT_WRD, REFRESH, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            AS_TAB , CS_TAB ,  C_TAB ,  A_TAB , XXXXXXX,                     XXXXXXX , OS_CTRL, OS_SHFT, OS_ALT , OS_GUIC,
+            PRV_WND, CS_TAB ,  C_TAB , NXT_WND, XXXXXXX,                      PREV_WS, XXXXXXX, XXXXXXX, NEXT_WS, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            XXXXXXX, XXXXXXX, MYSCOPY,MYSPASTE, XXXXXXX,                     XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+            XXXXXXX,  MYCUT , MYCOPY , MYPASTE, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                        _______, _______, _______,   _______ , _______, _______
                                    //`--------------------------'  `--------------------------'
@@ -265,6 +282,150 @@ oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_gui_state = os_up_unqueued;
 
 bool undead_keys_enabled = false;
+bool is_mac = false;
+
+void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode) {
+            case CLOSE_T: // Close browser tab: Cmd+W on Mac, Ctrl+W elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_W));
+                }
+                else {
+                    tap_code16(C(KC_W));
+                }
+                break;
+            case OPEN_T: // Open new browser tab: Cmd+T on Mac, Ctrl+T elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_T));
+                }
+                else {
+                    tap_code16(C(KC_T));
+                }
+                break;
+            case FIND: // Find: Cmd+F on Mac, Ctrl+F elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_F));
+                }
+                else {
+                    tap_code16(C(KC_F));
+                }
+                break;
+             case FWD: // Forward in browser history: Cmd+] on Mac, Alt+Right elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_RBRC));
+                }
+                else {
+                    tap_code16(A(KC_RIGHT));
+                }
+                break;
+             case BACK: // Back in browser history: Cmd+[ on Mac, Alt+Left elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_LBRC));
+                }
+                else {
+                    tap_code16(A(KC_LEFT));
+                }
+                break;
+             case MYCUT: // Cut: Cmd+X on Mac, Ctrl+X elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_X));
+                }
+                else {
+                    tap_code16(C(KC_X));
+                }
+                break;
+             case MYCOPY: // Copy: Cmd+C on Mac, Ctrl+C elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_C));
+                }
+                else {
+                    tap_code16(C(KC_C));
+                }
+                break;
+             case MYPASTE: // Paste: Cmd+V on Mac, Ctrl+V elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_V));
+                }
+                else {
+                    tap_code16(C(KC_V));
+                }
+                break;
+             case MYSCOPY: // Copy in the terminal: Cmd+C on Mac, Shift+Ctrl+C elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_C));
+                }
+                else {
+                    tap_code16(S(C(KC_C)));
+                }
+                break;
+             case MYSPASTE: // Paste in the terminal: Cmd+V on Mac, Shift+Ctrl+V elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_V));
+                }
+                else {
+                    tap_code16(S(C(KC_V)));
+                break;
+             case REFRESH: // Refresh page: Cmd+R on Mac, Ctrl+R elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_R));
+                }
+                else {
+                    tap_code16(C(KC_R));
+                }
+                break;
+             case NXT_WND: // Next window: Cmd+` on Mac, Alt+Tab elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_TAB));
+                }
+                else {
+                    tap_code16(A(KC_TAB));
+                }
+                break;
+             case PRV_WND: // Previous window: Cmd+Shift+` on Mac, Alt+Shift+Tab elsewhere
+                if (is_mac) {
+                    tap_code16(G(S(KC_TAB)));
+                }
+                else {
+                    tap_code16(A(S(KC_TAB)));
+                }
+                break;
+             case NEXT_WS: // Next workspace: Cmd+Right on my Mac (changed from Ctrl+Right), Ctrl+Win+Right elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_RIGHT));
+                }
+                else {
+                    tap_code16(C(G(KC_RIGHT)));
+                }
+                break;
+             case PREV_WS: // Previous workspace: Cmd+Left on my Mac (changed from Ctrl+Left), Ctrl+Win+Left elsewhere
+                if (is_mac) {
+                    tap_code16(G(KC_LEFT));
+                }
+                else {
+                    tap_code16(C(G(KC_LEFT)));
+                }
+                break;
+            case NXT_WRD: // Next word: Alt+Right on Mac, Ctrl+Right elsewhere
+                if (is_mac) {
+                    tap_code16(A(KC_RIGHT));
+                }
+                else {
+                    tap_code16(C(KC_RIGHT));
+                }
+                break;
+             case PRV_WRD: // Previous word: Alt+Left on Mac, Ctrl+Left elsewhere
+                if (is_mac) {
+                    tap_code16(A(KC_LEFT));
+                }
+                else {
+                    tap_code16(C(KC_LEFT));
+                }
+                break;
+            }
+        }
+    }
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Callum
@@ -295,6 +456,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         undead_keys_enabled = false;
     }
 
+    if (keycode == KC_IS_MAC) {
+        is_mac = true;
+    } else if (keycode == KC_IS_NOT_MAC) {
+        is_mac = false;
+    }
+
+    handle_custom_shortcut_keycodes(keycode, record);
+
+    return true;
+}
+
+bool process_detected_host_os_user(os_variant_t detected_os) {
+    if (detected_os == OS_MACOS || detected_os == OS_IOS) {
+        is_mac = true;
+    } else {
+        is_mac = false;
+    }
     return true;
 }
 
