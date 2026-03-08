@@ -283,8 +283,26 @@ oneshot_state os_gui_state = os_up_unqueued;
 
 bool undead_keys_enabled = false;
 bool is_mac = false;
+bool is_switching_windows = false;
+
+void handle_window_switching_mode(uint16_t keycode, keyrecord_t *record) {
+    // Handle modifier key state for NXT_WND and PRV_WND
+    if (is_switching_windows) {
+        if (keycode != PRV_WND && keycode != NXT_WND) {
+            // Different key pressed, release modifier
+            if (is_mac) {
+                unregister_code(KC_LGUI);
+            } else {
+                unregister_code(KC_LALT);
+            }
+            is_switching_windows = false;
+        }
+    }
+}
 
 void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
+    handle_window_switching_mode(keycode, record);
+
     if (record->event.pressed) {
         switch (keycode) {
             case CLOSE_T: // Close browser tab: Cmd+W on Mac, Ctrl+W elsewhere
@@ -372,24 +390,29 @@ void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
                 }
                 else {
                     tap_code16(C(KC_R));
+                    case NXT_WND: // Next window: Cmd+` on Mac, Alt+Tab elsewhere
+                        if (!is_switching_windows) {
+                            if (is_mac) {
+                                register_code(KC_LGUI);
+                            } else {
+                                register_code(KC_LALT);
+                            }
+                            is_switching_windows = true;
+                        }
+                        tap_code16(KC_TAB);
+                        break;
+                    case PRV_WND: // Previous window: Cmd+Shift+` on Mac, Alt+Shift+Tab elsewhere
+                        if (!is_switching_windows) {
+                            if (is_mac) {
+                                register_code(KC_LGUI);
+                            } else {
+                                register_code(KC_LALT);
+                            }
+                            is_switching_windows = true;
+                        }
+                        tap_code16(S(KC_TAB));
+                        break;
                 }
-                break;
-             case NXT_WND: // Next window: Cmd+` on Mac, Alt+Tab elsewhere
-                if (is_mac) {
-                    tap_code16(G(KC_TAB));
-                }
-                else {
-                    tap_code16(A(KC_TAB));
-                }
-                break;
-             case PRV_WND: // Previous window: Cmd+Shift+` on Mac, Alt+Shift+Tab elsewhere
-                if (is_mac) {
-                    tap_code16(G(S(KC_TAB)));
-                }
-                else {
-                    tap_code16(A(S(KC_TAB)));
-                }
-                break;
              case NEXT_WS: // Next workspace: Cmd+Right on my Mac (changed from Ctrl+Right), Ctrl+Win+Right elsewhere
                 if (is_mac) {
                     tap_code16(G(KC_RIGHT));
