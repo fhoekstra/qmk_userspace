@@ -1,20 +1,22 @@
 name: Build QMK firmware
 
-on: [push, workflow_dispatch]
+on:
+  - push
+  # - workflow_dispatch
 
 permissions:
   contents: write
 
 jobs:
   build:
-    name: 'QMK Userspace Build'
+    name: "QMK Userspace Build"
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
       qmk_repo: bastardkb/bastardkb-qmk
       qmk_ref: bkb-develop
 
   publish:
-    name: 'QMK Userspace Publish'
+    name: "QMK Userspace Publish"
     uses: bastardkb/qmk_userspace/.github/workflows/qmk_userspace_publish_develop.yml@develop
     if: always() && !cancelled()
     needs: build
