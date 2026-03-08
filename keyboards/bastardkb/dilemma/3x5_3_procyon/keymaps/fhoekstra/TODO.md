@@ -1,4 +1,9 @@
-## Dealing with different shortcuts between Mac vs Linux
+- Use media keys for volume, as KB_VOL doesn't work on Windows 11
+- clean NUM layer left side
+- (draw) replace mouse layer with static yaml in keymap drawing process
+- Add another 0 next to the 1 key
+
+## *(Done)* Dealing with different shortcuts between Mac vs Linux
 
 Enable automatically adapting to macOS, and add to shortcuts layer if the combo is not in EXt or shortcuts layer yet:
 
