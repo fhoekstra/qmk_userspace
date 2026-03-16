@@ -28,8 +28,6 @@
 #define OS_RCTL OSM(MOD_RCTL)
 #define OS_LALT OSM(MOD_LALT)
 // Misc keycodes
-#define VOLUP KC_KB_VOLUME_UP
-#define VOLDN KC_KB_VOLUME_DOWN
 #define BRTUP KC_BRIGHTNESS_UP
 #define MUTE KC_KB_MUTE
 #define BRTDN KC_BRIGHTNESS_DOWN
@@ -144,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_FUNC] = LAYOUT_split_3x5_3( // SYM + EXT
         //,--------------------------------------------.                    ,--------------------------------------------.
-            KC_STOP, KC_MPLY,  VOLDN ,  VOLUP ,  MUTE  ,                      QK_BOOT,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 ,
+            KC_STOP, KC_MPLY, KC_VOLD, KC_VOLU,  MUTE  ,                      QK_BOOT,  KC_F7 ,  KC_F8 ,  KC_F9 , KC_F10 ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             OS_GUIC, OS_ALT , OS_SHFT, OS_CTRL, RM_TOGG,                       BRTUP ,  KC_F4 ,  KC_F5 ,  KC_F6 , KC_F11 ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
