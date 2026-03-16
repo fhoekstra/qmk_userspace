@@ -154,11 +154,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NUM] = LAYOUT_split_3x5_3(
         //,--------------------------------------------.                    ,--------------------------------------------.
-            AS_TAB , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_7  ,  KC_8  ,  KC_9  , XXXXXXX,
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_7  ,  KC_8  ,  KC_9  , XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             OS_GUIC, OS_ALT , OS_SHFT, OS_CTRL, OS_RALTC,                      KC_0  ,  KC_4  ,  KC_5  ,  KC_6  , KC_DOT ,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-             A_TAB , CS_TAB ,  C_TAB ,  KC_V  , XXXXXXX,                      XXXXXXX,  KC_1  ,  KC_2  ,  KC_3  , KC_SLSH,
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_1  ,  KC_2  ,  KC_3  , KC_SLSH,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                        _______, _______, _______,   _______ , KC_ENT , _______
                                    //`--------------------------'  `--------------------------'

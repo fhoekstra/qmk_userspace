@@ -1,5 +1,5 @@
 - [x] Use media keys for volume, as KB_VOL doesn't work on Windows 11
-- clean NUM layer left side
+- [x] clean NUM layer left side
 - (draw) replace mouse layer with static yaml in keymap drawing process
 - Add another 0 next to the 1 key
 
