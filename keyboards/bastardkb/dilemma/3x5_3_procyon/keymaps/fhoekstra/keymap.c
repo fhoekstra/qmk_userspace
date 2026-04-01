@@ -192,7 +192,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 // #define DILEMMA_AUTO_SNIPING_ON_LAYER _EXT
-#define DILEMMA_MINIMUM_SNIPING_DPI 500
+#define DILEMMA_MINIMUM_SNIPING_DPI 400
 #define DILEMMA_SNIPING_DPI_CONFIG_STEP 200
 #define Dilemma_MINIMUM_DEFAULT_DPI 4000
 #define Dilemma_MAXIMUM_DEFAULT_DPI 32000
@@ -448,8 +448,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 bool process_detected_host_os_user(os_variant_t detected_os) {
     if (detected_os == OS_MACOS || detected_os == OS_IOS) {
+        pointing_device_set_cpi(Dilemma_MINIMUM_DEFAULT_DPI);
         is_mac = true;
     } else {
+        pointing_device_set_cpi(Dilemma_MAXIMUM_DEFAULT_DPI);
         is_mac = false;
     }
     return true;
