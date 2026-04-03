@@ -10,7 +10,6 @@
 
 // Trackpad/pointer layers
 #define PT_Z LT(LAYER_POINTER, KC_Z)
-#define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
 #ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
@@ -31,11 +30,6 @@
 #define BRTUP KC_BRIGHTNESS_UP
 #define MUTE KC_MUTE
 #define BRTDN KC_BRIGHTNESS_DOWN
-#define SHFT_G S(KC_G)
-#define C_TAB C(KC_TAB)
-#define CS_TAB S(C(KC_TAB))
-#define A_TAB A(KC_TAB)
-#define AS_TAB S(A(KC_TAB))
 #define EURO RALT(KC_5)
 
 enum custom_layers {
