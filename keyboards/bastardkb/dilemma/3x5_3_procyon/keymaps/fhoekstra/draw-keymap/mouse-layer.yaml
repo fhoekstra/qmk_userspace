@@ -1,0 +1,20 @@
+layers:
+  MOUSE:
+    - [QK BOOT, EE CLR, "", "DPI", "Snipe DPI", "", "", "", "", ""]
+    - [LGUI, LALT, ^, ⇧, "", "", "", "", "", ""]
+    - - { t: ▽, type: trans }
+      - "DRAG SCROLL"
+      - "SNIPE"
+      - MS BTN3
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+    - - MS BTN3
+      - MS BTN2
+      - MS BTN1
+      - { t: ▽, type: trans }
+      - { t: ▽, type: trans }
+      - { t: ▽, type: trans }

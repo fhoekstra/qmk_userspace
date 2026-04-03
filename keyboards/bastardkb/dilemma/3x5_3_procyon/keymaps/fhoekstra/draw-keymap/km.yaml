@@ -11,17 +11,8 @@ layers:
     - SPC
     - MO( SYM)
   EXT:
-  - [ESC, ⎇ LEFT, ^ F, ⎇ RIGHT, INS, INS, PGDN, PGUP, '', '']
-  - - ⌘mod
-    - ⎇mod
-    - ⇧mod
-    - ^mod
-    - {t: RALT, h: sticky}
-    - LEFT
-    - DOWN
-    - UP
-    - RIGHT
-    - DEL
+  - [ESC, BACK, FIND, FWD, INS, INS, PGDN, PGUP, '', '']
+  - [OS GUIC, ⎇mod, ⇧mod, ^mod, OS RALTC, LEFT, DOWN, UP, RIGHT, DEL]
   - ['', '', TAB, ESC, '', '', BSPC, HOME, END, Print Scr]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -31,18 +22,18 @@ layers:
     - {t: ▽, type: trans}
   SYM:
   - ['~', '=', +, '{', '%', '&', '}', '*', '!', '@']
-  - ['`', ':', _, '-', '[', ']', ^mod, ⇧mod, ⎇mod, ⌘mod]
+  - ['`', ':', _, '-', '[', ']', ^mod, ⇧mod, ⎇mod, OS GUIC]
   - ['|', ;, '#', (, <, '>', ), ^, $, \]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - SPC
     - {t: ▽, type: trans}
   FUNC (EXT+SYM):
-  - [STOP, MPLY, Vol -, Vol +, KB MUTE, QK BOOT, F7, F8, F9, F10]
-  - [⌘mod, ⎇mod, ⇧mod, ^mod, RM TOGG, Brt -, F4, F5, F6, F11]
-  - [KB MUTE, '', ⇧^ C, ⇧^ V, RM NEXT, Brt +, F1, F2, F3, F12]
+  - [STOP, ⏯️, 🔈, 🔊, 🔇, QK BOOT, F7, F8, F9, F10]
+  - [OS GUIC, ⎇mod, ⇧mod, ^mod, LED ⏻, 🔅, F4, F5, F6, F11]
+  - [🔇, '', '>_ Copy', '>_ Paste', LED mode, 🔆, F1, F2, F3, F12]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -50,18 +41,9 @@ layers:
     - ENT
     - {t: ▽, type: trans}
   NUM:
-  - [⇧⎇ TAB, '', '', '', '', '', '7', '8', '9', '']
-  - - ⌘mod
-    - ⎇mod
-    - ⇧mod
-    - ^mod
-    - {t: RALT, h: sticky}
-    - '0'
-    - '4'
-    - '5'
-    - '6'
-    - .
-  - [⎇ TAB, ⇧^ TAB, ^ TAB, V, '', '', '1', '2', '3', /]
+  - ['', '', '', '', '', '', '7', '8', '9', '']
+  - [OS GUIC, ⎇mod, ⇧mod, ^mod, OS RALTC, '0', '4', '5', '6', .]
+  - ['', '', '', '', '', '0', '1', '2', '3', /]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -69,18 +51,9 @@ layers:
     - ENT
     - {t: ▽, type: trans}
   SHRT:
-  - [⇧⎇ TAB, ⇧^ TAB, ^ TAB, ⎇ TAB, '', '', '', '', '', '']
-  - - ⇧⎇ TAB
-    - ⇧^ TAB
-    - ^ TAB
-    - ⎇ TAB
-    - ''
-    - ''
-    - ^mod
-    - ⇧mod
-    - {t: RALT, h: sticky}
-    - ⌘mod
-  - ['', '', ⇧^ C, ⇧^ V, '', '', '', '', '', '']
+  - ['', Close Tab, '>_ Copy', '>_ Paste', Open Tab, '', ⬅️ Word, ➡️ Word, 🗘 Refresh, '']
+  - [⬅️ Window, ⬅️ Tab, ➡️ Tab, ➡️ Window, '', ⬅️ Wrkspc, '', '', ➡️ Wrkspc, '']
+  - ['', Cut, Copy, Paste, '', '', '', '', '', '']
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -89,7 +62,7 @@ layers:
     - {t: ▽, type: trans}
   MOUSE:
   - [QK BOOT, EE CLR, '', '', '', '', '', '', '', '']
-  - [LGUI, LALT, ^, ⇧, '', '', '', '', '', '']
+  - [LGUI, LALT, ⇧, ^, '', '', '', '', '', '']
   - - {t: ▽, type: trans}
     - ''
     - ''

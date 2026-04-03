@@ -1,0 +1,81 @@
+layout: {qmk_keyboard: bastardkb/dilemma/3x5_3, layout_name: LAYOUT_split_3x5_3}
+layers:
+  BASE:
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [A, S, D, F, G, H, J, K, L, '''']
+    - ['Z (MOUSE)', X, C, V, B, N, M, ',', ., /]
+    - - MO( EXT)
+      - {t: ⇧, h: sticky}
+      - MO( NUM)
+      - MO( SHRT)
+      - SPC
+      - MO( SYM)
+  EXT:
+    - [ESC, BACK, FIND, FWD, INS, INS, PGDN, PGUP, '', '']
+    - [OS GUIC, ⎇mod, ⇧mod, ^mod, OS RALTC, LEFT, DOWN, UP, RIGHT, DEL]
+    - ['', '', TAB, ESC, '', '', BSPC, HOME, END, Print Scr]
+    - - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - ENT
+      - {t: ▽, type: trans}
+  SYM:
+    - ['~', '=', +, '{', '%', '&', '}', '*', '!', '@']
+    - ['`', ':', _, '-', '[', ']', ^mod, ⇧mod, ⎇mod, OS GUIC]
+    - ['|', ;, '#', (, <, '>', ), ^, $, \]
+    - - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - SPC
+      - {t: ▽, type: trans}
+  FUNC (EXT+SYM):
+    - [STOP, ⏯️, "\U0001F508", "\U0001F50A", "\U0001F507", QK BOOT, F7, F8, F9, F10]
+    - [OS GUIC, ⎇mod, ⇧mod, ^mod, LED ⏻, "\U0001F505", F4, F5, F6, F11]
+    - ["\U0001F507", '', '>_ Copy', '>_ Paste', LED mode, "\U0001F506", F1, F2, F3, F12]
+    - - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - ENT
+      - {t: ▽, type: trans}
+  NUM:
+    - ['', '', '', '', '', '', '7', '8', '9', '']
+    - [OS GUIC, ⎇mod, ⇧mod, ^mod, OS RALTC, '0', '4', '5', '6', .]
+    - ['', '', '', '', '', '0', '1', '2', '3', /]
+    - - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - ENT
+      - {t: ▽, type: trans}
+  SHRT:
+    - ['', Close Tab, '>_ Copy', '>_ Paste', Open Tab, '', ⬅️ Word, ➡️ Word, "\U0001F5D8 Refresh", '']
+    - [⬅️ Window, ⬅️ Tab, ➡️ Tab, ➡️ Window, '', ⬅️ Wrkspc, '', '', ➡️ Wrkspc, '']
+    - ['', Cut, Copy, Paste, '', '', '', '', '', '']
+    - - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+  MOUSE:
+    - [QK BOOT, EE CLR, "", "DPI", "Snipe DPI", "", "", "", "", ""]
+    - [LGUI, LALT, ^, ⇧, "", "", "", "", "", ""]
+    - - {t: ▽, type: trans}
+      - "DRAG SCROLL"
+      - "SNIPE"
+      - MS BTN3
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+    - - MS BTN3
+      - MS BTN2
+      - MS BTN1
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}
+      - {t: ▽, type: trans}

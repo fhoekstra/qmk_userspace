@@ -8,11 +8,12 @@ sed -i \
     -e 's/L0/BASE/g' \
     -e 's/L1/EXT/g' \
     -e 's/L2/SYM/g' \
-    -e 's/L3/FUNC (EXT+SYM)/g'\
+    -e 's/L3/FUNC (EXT+SYM)/g' \
     -e 's/L4/NUM/g' \
     -e 's/L5/SHRT/g' \
     -e 's/L6/MOUSE/g' \
     -e 's/LT(LAYER POINTER,Z)/Z (MOUSE)/g' \
     -e 's/AltGr 5/€/g' \
     km.yaml
-keymap draw <(cat km.yaml combos.yaml) >km.svg
+yq eval-all 'select(filename == "km.yaml") * select(filename == "mouse-layer.yaml")' km.yaml mouse-layer.yaml >merged.yaml
+keymap draw <(cat merged.yaml combos.yaml) >km.svg

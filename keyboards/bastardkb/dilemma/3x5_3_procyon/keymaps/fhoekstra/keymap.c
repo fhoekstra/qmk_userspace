@@ -29,7 +29,7 @@
 #define OS_LALT OSM(MOD_LALT)
 // Misc keycodes
 #define BRTUP KC_BRIGHTNESS_UP
-#define MUTE KC_KB_MUTE
+#define MUTE KC_MUTE
 #define BRTDN KC_BRIGHTNESS_DOWN
 #define SHFT_G S(KC_G)
 #define C_TAB C(KC_TAB)
@@ -77,6 +77,8 @@ enum keycodes {
     PRV_WRD,
     NXT_WND,
     PRV_WND,
+    NXT_TAB,
+    PRV_TAB,
     NEXT_WS,
     PREV_WS,
 };
@@ -168,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,--------------------------------------------.                    ,--------------------------------------------.
             XXXXXXX, CLOSE_T, MYSCOPY,MYSPASTE, OPEN_T ,                      XXXXXXX, PRV_WRD, NXT_WRD, REFRESH, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
-            PRV_WND, CS_TAB ,  C_TAB , NXT_WND, XXXXXXX,                      PREV_WS, XXXXXXX, XXXXXXX, NEXT_WS, XXXXXXX,
+            PRV_WND, PRV_TAB, NXT_TAB, NXT_WND, XXXXXXX,                      PREV_WS, XXXXXXX, XXXXXXX, NEXT_WS, XXXXXXX,
         //|----*---+----*---+----*---+---**---+--------|                    |--------+---**---+---*----+---*----+---*----|
             XXXXXXX,  MYCUT , MYCOPY , MYPASTE, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -290,6 +292,10 @@ void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
 
     if (record->event.pressed) {
         switch (keycode) {
+            case NXT_TAB:
+               tap_code16(C(KC_TAB));
+            case PRV_TAB:
+               tap_code16(S(C(KC_TAB)));
             case CLOSE_T: // Close browser tab: Cmd+W on Mac, Ctrl+W elsewhere
                 if (is_mac) {
                     tap_code16(G(KC_W));

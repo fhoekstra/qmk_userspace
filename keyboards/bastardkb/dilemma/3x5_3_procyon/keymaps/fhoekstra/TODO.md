@@ -1,8 +1,8 @@
 - [x] Use media keys for volume, as KB_VOL doesn't work on Windows 11
 - [x] clean NUM layer left side
 - [x] Add another 0 next to the 1 key
+- [x](draw) replace mouse layer with static yaml in keymap drawing process
 - PrintScreen: Full screen / partial separate bindings for macOS and other
-- (draw) replace mouse layer with static yaml in keymap drawing process
 
 ## *(Done)* Dealing with different shortcuts between Mac vs Linux
 
