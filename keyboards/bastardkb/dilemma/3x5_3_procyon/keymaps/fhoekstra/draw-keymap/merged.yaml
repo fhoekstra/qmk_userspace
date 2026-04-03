@@ -12,7 +12,7 @@ layers:
       - MO( SYM)
   EXT:
     - [ESC, BACK, FIND, FWD, INS, INS, PGDN, PGUP, '', '']
-    - [OS GUIC, ⎇mod, ⇧mod, ^mod, OS RALTC, LEFT, DOWN, UP, RIGHT, DEL]
+    - [⌘mod, ⎇mod, ⇧mod, ^mod, R⎇mod, LEFT, DOWN, UP, RIGHT, DEL]
     - ['', '', TAB, ESC, '', '', BSPC, HOME, END, Print Scr]
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}
@@ -22,7 +22,7 @@ layers:
       - {t: ▽, type: trans}
   SYM:
     - ['~', '=', +, '{', '%', '&', '}', '*', '!', '@']
-    - ['`', ':', _, '-', '[', ']', ^mod, ⇧mod, ⎇mod, OS GUIC]
+    - ['`', ':', _, '-', '[', ']', ^mod, ⇧mod, ⎇mod, ⌘mod]
     - ['|', ;, '#', (, <, '>', ), ^, $, \]
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}
@@ -32,7 +32,7 @@ layers:
       - {t: ▽, type: trans}
   FUNC (EXT+SYM):
     - [STOP, ⏯️, "\U0001F508", "\U0001F50A", "\U0001F507", QK BOOT, F7, F8, F9, F10]
-    - [OS GUIC, ⎇mod, ⇧mod, ^mod, LED ⏻, "\U0001F505", F4, F5, F6, F11]
+    - [⌘mod, ⎇mod, ⇧mod, ^mod, LED ⏻, "\U0001F505", F4, F5, F6, F11]
     - ["\U0001F507", '', '>_ Copy', '>_ Paste', LED mode, "\U0001F506", F1, F2, F3, F12]
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}
@@ -42,7 +42,7 @@ layers:
       - {t: ▽, type: trans}
   NUM:
     - ['', '', '', '', '', '', '7', '8', '9', '']
-    - [OS GUIC, ⎇mod, ⇧mod, ^mod, OS RALTC, '0', '4', '5', '6', .]
+    - [⌘mod, ⎇mod, ⇧mod, ^mod, R⎇mod, '0', '4', '5', '6', .]
     - ['', '', '', '', '', '0', '1', '2', '3', /]
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}

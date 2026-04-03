@@ -76,7 +76,9 @@ parse_config:
     OS_SHFT: ⇧mod
     LSFT: ⇧
     OS_ALT: ⎇mod
+    OS_RALTC: R⎇mod
     OS_GUI: ⌘mod
+    OS_GUIC: ⌘mod
     MINUS: "-"
     MINS: "-"
     PMNS: "- (NP)"
