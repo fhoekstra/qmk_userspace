@@ -31,6 +31,8 @@
 #define MUTE KC_MUTE
 #define BRTDN KC_BRIGHTNESS_DOWN
 #define EURO RALT(KC_5)
+#define NXT_TAB C(KC_TAB)
+#define PRV_TAB S(C(KC_TAB))
 
 enum custom_layers {
     _BASE,
@@ -71,8 +73,6 @@ enum keycodes {
     PRV_WRD,
     NXT_WND,
     PRV_WND,
-    NXT_TAB,
-    PRV_TAB,
     NEXT_WS,
     PREV_WS,
 };
@@ -284,10 +284,6 @@ void handle_custom_shortcut_keycodes(uint16_t keycode, keyrecord_t *record) {
 
     if (record->event.pressed) {
         switch (keycode) {
-            case NXT_TAB:
-               tap_code16(C(KC_TAB));
-            case PRV_TAB:
-               tap_code16(S(C(KC_TAB)));
             case CLOSE_T: // Close browser tab: Cmd+W on Mac, Ctrl+W elsewhere
                 if (is_mac) {
                     tap_code16(G(KC_W));
