@@ -21,13 +21,13 @@ layers:
       - SPC
       - {t: ▽, type: trans}
   SYM:
-    - ['~', '=', +, '{', '%', '&', '}', '*', '!', '@']
+    - ['~', +, '=', '{', '%', '&', '}', '*', '!', '@']
     - ['`', ':', _, '-', '[', ']', ^mod, ⇧mod, ⎇mod, ⌘mod]
     - ['|', ;, '#', (, <, '>', ), ^, $, \]
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}
       - {t: ▽, type: trans}
-      - {t: ▽, type: trans}
+      - MO( SHRT)
       - SPC
       - {t: ▽, type: trans}
   FUNC (EXT+SYM):
@@ -37,8 +37,8 @@ layers:
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}
       - {t: ▽, type: trans}
-      - {t: ▽, type: trans}
       - ENT
+      - SPC
       - {t: ▽, type: trans}
   NUM:
     - ['', '', '', '', '', '', '7', '8', '9', '']
@@ -47,8 +47,8 @@ layers:
     - - {t: ▽, type: trans}
       - {t: ▽, type: trans}
       - {t: ▽, type: trans}
-      - {t: ▽, type: trans}
       - ENT
+      - SPC
       - {t: ▽, type: trans}
   SHRT:
     - ['', Close Tab, '>_ Copy', '>_ Paste', Open Tab, '', ⬅️ Word, ➡️ Word, "\U0001F5D8 Refresh", '']
